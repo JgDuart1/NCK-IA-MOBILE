@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Providers } from './src/providers';
 import { LoadingScreen } from './src/components';
+import { RootNavigator } from './src/navigation';
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -24,7 +25,7 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Providers>
         <StatusBar style="light" />
-        {/* Navigation sera adicionado no Plano 03 */}
+        <RootNavigator />
       </Providers>
     </GestureHandlerRootView>
   );

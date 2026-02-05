@@ -11,3 +11,5 @@ export * from './use-profile';
 export * from './use-invites';
 export * from './use-notifications';
 export * from './use-push-notifications';
+export * from './use-tasks';
+export * from './use-task-mutations';

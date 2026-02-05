@@ -22,6 +22,7 @@ export type ProjectsStackParamList = {
   TasksList: { projectId: string };
   TaskDetail: { projectId: string; taskId: string };
   TaskNew: { projectId: string; sprintId?: string };
+  TaskEdit: { projectId: string; taskId: string };
   SprintsList: { projectId: string };
   SprintDetail: { projectId: string; sprintId: string };
   SprintNew: { projectId: string };

@@ -6,3 +6,4 @@ export * from './projects';
 export * from './caverna';
 export * from './settings';
 export * from './profile';
+export * from './notifications';

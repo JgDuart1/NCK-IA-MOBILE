@@ -6,3 +6,4 @@ export * from './caverna.api';
 export * from './events.api';
 export * from './meeting-requests.api';
 export * from './users.api';
+export * from './notifications.api';

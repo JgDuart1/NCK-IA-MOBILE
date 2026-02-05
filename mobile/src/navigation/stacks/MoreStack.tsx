@@ -1,8 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
 import { PlaceholderScreen } from '@/components/feedback';
+import { AboutScreen, SettingsScreen } from '@/screens/settings';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -56,12 +57,12 @@ export function MoreStack() {
 
       <Stack.Screen
         name="Settings"
-        component={PlaceholderScreen}
+        component={SettingsScreen}
         options={{ title: 'Configurações' }}
       />
       <Stack.Screen
         name="About"
-        component={PlaceholderScreen}
+        component={AboutScreen}
         options={{ title: 'Sobre' }}
       />
 

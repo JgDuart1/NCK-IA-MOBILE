@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { Project } from '@/types';
 import { Badge } from '@/components/ui';
-import { darkTheme, spacing, typography } from '@/theme';
+import { colors, darkTheme, spacing, typography } from '@/theme';
 
 interface ProjectHeaderProps {
   project: Project;
@@ -19,11 +19,11 @@ const STATUS_LABELS: Record<Project['status'], string> = {
 };
 
 const STATUS_COLORS: Record<Project['status'], string> = {
-  PLANNING: '#F59E0B',
-  ACTIVE: '#10B981',
-  PAUSED: '#6B7280',
-  COMPLETED: '#3B82F6',
-  ARCHIVED: '#4B5563',
+  PLANNING: colors.warning,
+  ACTIVE: colors.success,
+  PAUSED: colors.neutral[500],
+  COMPLETED: colors.info,
+  ARCHIVED: colors.neutral[600],
 };
 
 export function ProjectHeader({ project, onBack }: ProjectHeaderProps) {

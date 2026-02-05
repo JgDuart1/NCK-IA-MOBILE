@@ -2,7 +2,7 @@
 
 Data: 2026-02-05
 Branch: mobile/05-projetos
-Status: concluido com pendencia de testes locais
+Status: concluido e validado
 
 Resumo
 - Implementado modulo de projetos com lista, detalhe, criacao, configuracoes e membros.
@@ -37,8 +37,10 @@ Arquivos principais
 - mobile/src/navigation/stacks/ProjectsStack.tsx
 
 Testes e verificacoes
-- npm run typecheck (falhou: tsc nao encontrado no ambiente)
+- npm install
+- npm run typecheck
+- npm run lint
 - Testes manuais nao executados neste ambiente
 
 Observacoes
-- Necessario instalar dependencias de TypeScript ou garantir tsc disponivel para typecheck.
+- Dependencias instaladas localmente para habilitar typecheck.

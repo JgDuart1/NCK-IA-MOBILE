@@ -10,6 +10,7 @@ import { Button } from '@/components/ui';
 import { EmptyState, ErrorState, LoadingScreen } from '@/components/feedback';
 import { useProject } from '@/hooks/use-projects';
 import { useProjectMembers } from '@/hooks/use-project-members';
+import { useSprints } from '@/hooks/use-sprints';
 import { useTasksByStatus, useUpdateTaskStatus } from '@/hooks/use-tasks';
 import { darkTheme, spacing, typography } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
@@ -23,6 +24,7 @@ export function TasksListScreen({ route, navigation }: Props) {
 
   const { data: project } = useProject(projectId);
   const { data: members = [] } = useProjectMembers(projectId);
+  const { data: sprints = [] } = useSprints(projectId);
   const { grouped, isLoading, error, refetch, isRefetching } = useTasksByStatus(
     projectId,
     filters
@@ -96,7 +98,7 @@ export function TasksListScreen({ route, navigation }: Props) {
         visible={filtersVisible}
         filters={filters}
         members={members}
-        sprints={[]}
+        sprints={sprints}
         onClose={() => setFiltersVisible(false)}
         onApply={(newFilters) => setFilters(newFilters)}
       />

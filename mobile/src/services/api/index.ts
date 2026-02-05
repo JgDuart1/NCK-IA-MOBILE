@@ -8,3 +8,4 @@ export * from './meeting-requests.api';
 export * from './users.api';
 export * from './notifications.api';
 export * from './tasks.api';
+export * from './sprints.api';

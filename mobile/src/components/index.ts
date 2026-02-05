@@ -8,3 +8,4 @@ export * from './settings';
 export * from './profile';
 export * from './notifications';
 export * from './tasks';
+export * from './sprints';

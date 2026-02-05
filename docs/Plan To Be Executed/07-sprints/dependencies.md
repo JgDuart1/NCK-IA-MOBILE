@@ -30,6 +30,8 @@
 | `useSprint` | Sprint por ID |
 | `useActiveSprint` | Sprint ativa do projeto |
 | `useCreateSprint` | Mutation criar |
+| `useUpdateSprint` | Mutation editar |
+| `useDeleteSprint` | Mutation excluir |
 | `useStartSprint` | Mutation iniciar |
 | `useCompleteSprint` | Mutation completar |
 

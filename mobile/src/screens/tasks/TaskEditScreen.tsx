@@ -8,6 +8,7 @@ import { ErrorState, LoadingScreen } from '@/components/feedback';
 import { useTask } from '@/hooks/use-tasks';
 import { useUpdateTask } from '@/hooks/use-task-mutations';
 import { useProjectMembers } from '@/hooks/use-project-members';
+import { useSprints } from '@/hooks/use-sprints';
 import { attachmentService } from '@/services/attachments';
 import { darkTheme } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
@@ -23,6 +24,7 @@ export function TaskEditScreen({ route, navigation }: Props) {
   const { data: task, isLoading, error, refetch } = useTask(taskId);
   const { mutateAsync, isPending } = useUpdateTask();
   const { data: members = [] } = useProjectMembers(projectId);
+  const { data: sprints = [] } = useSprints(projectId);
 
   const handleSubmit = async (
     data: {
@@ -116,7 +118,7 @@ export function TaskEditScreen({ route, navigation }: Props) {
       <TaskForm
         initialValues={task}
         members={members}
-        sprints={[]}
+        sprints={sprints}
         attachments={task.attachments || []}
         submitLabel="Salvar"
         loading={isPending}

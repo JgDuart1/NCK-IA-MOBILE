@@ -12,7 +12,7 @@ interface TaskFilters {
 
 interface CreateTaskDto {
   project_id: string;
-  sprint_id?: string;
+  sprint_id?: string | null;
   assignee_id?: string;
   title: string;
   description?: string;

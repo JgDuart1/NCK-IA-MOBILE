@@ -6,6 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TaskForm } from '@/components/tasks';
 import { useCreateTask } from '@/hooks/use-task-mutations';
 import { useProjectMembers } from '@/hooks/use-project-members';
+import { useSprints } from '@/hooks/use-sprints';
 import { attachmentService } from '@/services/attachments';
 import { darkTheme } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
@@ -19,6 +20,7 @@ export function TaskNewScreen({ route, navigation }: Props) {
   const { projectId, sprintId } = route.params;
   const { mutateAsync, isPending } = useCreateTask();
   const { data: members = [] } = useProjectMembers(projectId);
+  const { data: sprints = [] } = useSprints(projectId);
 
   const handleSubmit = async (
     data: {
@@ -80,7 +82,7 @@ export function TaskNewScreen({ route, navigation }: Props) {
       <TaskForm
         initialValues={{ sprint_id: sprintId }}
         members={members}
-        sprints={[]}
+        sprints={sprints}
         submitLabel="Criar"
         loading={isPending}
         onSubmit={handleSubmit}

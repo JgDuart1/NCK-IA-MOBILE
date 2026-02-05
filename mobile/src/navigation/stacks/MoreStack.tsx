@@ -3,6 +3,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
 import { PlaceholderScreen } from '@/components/feedback';
+import {
+  CavernaHomeScreen,
+  CavernaReservarScreen,
+  CavernaMinhasReservasScreen,
+  ReservationDetailScreen,
+} from '@/screens/caverna';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -84,19 +90,27 @@ export function MoreStack() {
 
       <Stack.Screen
         name="CavernaHome"
-        component={PlaceholderScreen}
+        component={CavernaHomeScreen}
         options={{ title: 'Caverna do Dragão' }}
       />
       <Stack.Screen
         name="CavernaReservar"
-        component={PlaceholderScreen}
+        component={CavernaReservarScreen}
         options={{ title: 'Nova Reserva' }}
       />
       <Stack.Screen
         name="CavernaMinhasReservas"
-        component={PlaceholderScreen}
+        component={CavernaMinhasReservasScreen}
         options={{ title: 'Minhas Reservas' }}
+      />
+      <Stack.Screen
+        name="ReservationDetail"
+        component={ReservationDetailScreen}
+        options={{ title: 'Detalhes da Reserva' }}
       />
     </Stack.Navigator>
   );
 }
+
+
+

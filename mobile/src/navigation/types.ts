@@ -58,6 +58,7 @@ export type MoreStackParamList = {
   CavernaHome: undefined;
   CavernaReservar: undefined;
   CavernaMinhasReservas: undefined;
+  ReservationDetail: { reservationId: string };
 };
 
 export type MainTabsParamList = {

@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 import { ProjectHeader, ProjectTabs, ProjectOverview } from '@/components/projects';
+import type { TabItem } from '@/components/projects';
 import { LoadingScreen, ErrorState } from '@/components/feedback';
 import { useProject } from '@/hooks/use-projects';
 import { useProjectStore } from '@/stores/project.store';
@@ -35,7 +36,7 @@ export function ProjectDetailScreen({ route, navigation }: Props) {
     );
   }
 
-  const tabs = [
+  const tabs: TabItem[] = [
     { key: 'overview', label: 'Visao Geral', icon: 'grid-outline' },
     { key: 'tasks', label: 'Tarefas', icon: 'checkbox-outline' },
     { key: 'sprints', label: 'Sprints', icon: 'layers-outline' },

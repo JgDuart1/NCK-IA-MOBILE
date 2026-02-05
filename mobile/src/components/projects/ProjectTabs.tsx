@@ -3,7 +3,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { darkTheme, spacing, typography } from '@/theme';
 
-interface TabItem {
+export interface TabItem {
   key: string;
   label: string;
   icon: keyof typeof Ionicons.glyphMap;

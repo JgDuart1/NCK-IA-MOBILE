@@ -3,6 +3,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ProjectsStackParamList } from '../types';
 import { PlaceholderScreen } from '@/components/feedback';
+import {
+  ProjectDetailScreen,
+  ProjectMembersScreen,
+  ProjectNewScreen,
+  ProjectSettingsScreen,
+  ProjectsListScreen,
+} from '@/screens/projects';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<ProjectsStackParamList>();
@@ -24,27 +31,27 @@ export function ProjectsStack() {
     >
       <Stack.Screen
         name="ProjectsList"
-        component={PlaceholderScreen}
+        component={ProjectsListScreen}
         options={{ title: 'Projetos' }}
       />
       <Stack.Screen
         name="ProjectNew"
-        component={PlaceholderScreen}
+        component={ProjectNewScreen}
         options={{ title: 'Novo Projeto' }}
       />
       <Stack.Screen
         name="ProjectDetail"
-        component={PlaceholderScreen}
+        component={ProjectDetailScreen}
         options={{ title: 'Projeto' }}
       />
       <Stack.Screen
         name="ProjectSettings"
-        component={PlaceholderScreen}
-        options={{ title: 'Configurações' }}
+        component={ProjectSettingsScreen}
+        options={{ title: 'Configuracoes' }}
       />
       <Stack.Screen
         name="ProjectMembers"
-        component={PlaceholderScreen}
+        component={ProjectMembersScreen}
         options={{ title: 'Membros' }}
       />
 

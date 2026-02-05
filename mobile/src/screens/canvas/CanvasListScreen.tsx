@@ -1,13 +1,15 @@
-﻿import React from 'react';
+﻿import React, { useEffect, useMemo, useState } from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
 import { CanvasCard } from '@/components/canvas';
+import { ProjectCard } from '@/components/projects';
 import { EmptyState, ErrorState, LoadingScreen } from '@/components/feedback';
 import { Button } from '@/components/ui';
 import { useCanvasList } from '@/hooks/use-canvas';
+import { useProjects } from '@/hooks/use-projects';
 import { useProjectStore } from '@/stores/project.store';
 import { darkTheme, spacing } from '@/theme';
 import { MainTabsParamList } from '@/navigation/types';
@@ -28,9 +30,26 @@ interface CanvasListProps {
 
 export function CanvasListScreen({ navigation, route }: CanvasListProps) {
   const selectedProject = useProjectStore((s) => s.selectedProject);
-  const projectId = route.params?.projectId ?? selectedProject?.id;
+  const setSelectedProject = useProjectStore((s) => s.setSelectedProject);
 
-  const { data, isLoading, error, refetch, isFetching } = useCanvasList(projectId ?? '');
+  const [activeProjectId, setActiveProjectId] = useState<string | undefined>(
+    route.params?.projectId ?? selectedProject?.id
+  );
+
+  useEffect(() => {
+    if (route.params?.projectId) {
+      setActiveProjectId(route.params.projectId);
+      return;
+    }
+    if (!activeProjectId && selectedProject?.id) {
+      setActiveProjectId(selectedProject.id);
+    }
+  }, [route.params?.projectId, selectedProject?.id, activeProjectId]);
+
+  const { data, isLoading, error, refetch, isFetching } = useCanvasList(
+    activeProjectId ?? ''
+  );
+  const projectsQuery = useProjects();
 
   const handleNavigateToProjects = () => {
     const parent = navigation.getParent<BottomTabNavigationProp<MainTabsParamList>>();
@@ -39,12 +58,12 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
 
   const handleNewCanvas = () => {
     const parent = navigation.getParent<BottomTabNavigationProp<MainTabsParamList>>();
-    if (!projectId) return;
+    if (!activeProjectId) return;
     if (parent) {
-      parent.navigate('ProjectsTab', { screen: 'CanvasNew', params: { projectId } });
+      parent.navigate('ProjectsTab', { screen: 'CanvasNew', params: { projectId: activeProjectId } });
       return;
     }
-    navigation.navigate('CanvasNew', { projectId });
+    navigation.navigate('CanvasNew', { projectId: activeProjectId });
   };
 
   const handleOpenCanvas = (canvasId: string) => {
@@ -56,17 +75,58 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
     navigation.navigate('CanvasDetail', { canvasId });
   };
 
-  if (!projectId && !isLoading) {
+  const handleSelectProject = (project: NonNullable<typeof projectsQuery.data>['data'][number]) => {
+    setSelectedProject(project);
+    setActiveProjectId(project.id);
+  };
+
+  const projects = useMemo(() => projectsQuery.data?.data || [], [projectsQuery.data]);
+
+  if (!activeProjectId) {
+    if (projectsQuery.isLoading) {
+      return <LoadingScreen />;
+    }
+
+    if (projectsQuery.error) {
+      return (
+        <ErrorState
+          title="Erro ao carregar projetos"
+          description="Nao foi possivel carregar os projetos."
+          onRetry={projectsQuery.refetch}
+        />
+      );
+    }
+
     return (
       <SafeAreaView style={styles.container} edges={['top']}>
-        <View style={styles.emptyContainer}>
+        <View style={styles.header}>
           <EmptyState
             icon="briefcase-outline"
             title="Selecione um projeto"
-            description="Escolha um projeto para visualizar os canvas."
+            description="Escolha um projeto para abrir o Business Model Canvas."
           />
-          <Button onPress={handleNavigateToProjects}>Ir para projetos</Button>
+          <Button onPress={handleNavigateToProjects}>Ver projetos</Button>
         </View>
+        <FlatList
+          data={projects}
+          keyExtractor={(item) => item.id}
+          renderItem={({ item }) => (
+            <ProjectCard project={item} onPress={() => handleSelectProject(item)} />
+          )}
+          contentContainerStyle={styles.list}
+          ListEmptyComponent={
+            <View style={styles.emptyContainer}>
+              <EmptyState
+                icon="folder-outline"
+                title="Nenhum projeto"
+                description="Crie um projeto para comecar."
+              />
+              <Button onPress={handleNavigateToProjects}>Criar projeto</Button>
+            </View>
+          }
+          refreshing={projectsQuery.isFetching}
+          onRefresh={projectsQuery.refetch}
+        />
       </SafeAreaView>
     );
   }
@@ -87,7 +147,7 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
-      <View style={styles.header}>
+      <View style={styles.headerRow}>
         <Button
           variant="primary"
           size="sm"
@@ -95,6 +155,9 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
           leftIcon={<Ionicons name="add" size={18} color="#fff" />}
         >
           Novo Canvas
+        </Button>
+        <Button variant="outline" size="sm" onPress={() => setActiveProjectId(undefined)}>
+          Trocar projeto
         </Button>
       </View>
       <FlatList
@@ -128,6 +191,12 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: spacing.md,
+    gap: spacing.md,
+  },
+  headerRow: {
+    padding: spacing.md,
+    flexDirection: 'row',
+    gap: spacing.sm,
   },
   list: {
     padding: spacing.md,

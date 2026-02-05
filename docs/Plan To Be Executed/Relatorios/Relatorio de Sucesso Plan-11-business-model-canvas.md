@@ -10,6 +10,7 @@ Resumo
 - Assumptions e Experimentos com CRUD basico via API e estados vazios.
 - Hooks e API do Canvas integrados ao React Query.
 - Navegacao atualizada para acessar o fluxo do Business Model Canvas.
+- Ajuste no menu Mais: selecao de projeto antes de abrir o Canvas.
 
 Entregas do plano
 - Lista de canvas
@@ -42,4 +43,4 @@ Testes e verificacoes
 - npm run typecheck (falhou: tsc nao encontrado no ambiente)
 
 Observacoes
-- CanvasList via menu Mais usa projeto selecionado; quando nao ha projeto, direciona para lista de projetos.
+- CanvasList via menu Mais agora permite selecionar um projeto antes de listar os canvas.

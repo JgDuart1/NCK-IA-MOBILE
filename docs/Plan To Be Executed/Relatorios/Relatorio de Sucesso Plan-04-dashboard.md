@@ -36,7 +36,8 @@ Implementado o Dashboard conforme o Spec.md, com tela principal, componentes de 
 - `docs/Plan To Be Executed/04-dashboard/dependencies.md`
 
 ## Testes
-- `npm run typecheck` falhou: `tsc` nao encontrado no ambiente.
+- `npm run typecheck` OK
+- `npm run lint` OK
 - Testes manuais nao executados (ambiente sem emulador/dispositivo).
 
 ## Observacoes

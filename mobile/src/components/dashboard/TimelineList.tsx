@@ -7,19 +7,21 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { UseInfiniteQueryResult } from '@tanstack/react-query';
+import { InfiniteData, UseInfiniteQueryResult } from '@tanstack/react-query';
 import { TimelineEntry, TimelineAction } from '@/types';
 import { EmptyState, ErrorState } from '@/components/feedback';
 import { Skeleton } from '@/components/ui';
 import { darkTheme, spacing, typography } from '@/theme';
 import { TimelineItem } from './TimelineItem';
 
+type TimelinePage = { data: TimelineEntry[]; hasMore: boolean };
+
 interface TimelineListProps {
-  timeline: UseInfiniteQueryResult<{ data: TimelineEntry[]; hasMore: boolean }, Error>;
+  timeline: UseInfiniteQueryResult<InfiniteData<TimelinePage>, Error>;
   onItemPress: (entry: TimelineEntry) => void;
 }
 
-const FILTERS: Array<{ id: 'ALL' | TimelineAction; label: string }> = [
+const FILTERS: { id: 'ALL' | TimelineAction; label: string }[] = [
   { id: 'ALL', label: 'Tudo' },
   { id: 'CREATED', label: 'Criados' },
   { id: 'UPDATED', label: 'Atualizados' },
@@ -31,9 +33,9 @@ export function TimelineList({ timeline, onItemPress }: TimelineListProps) {
   const [filter, setFilter] = React.useState<'ALL' | TimelineAction>('ALL');
 
   const entries = React.useMemo(() => {
-    const allEntries = timeline.data?.pages.flatMap((page) => page.data) ?? [];
+    const allEntries = timeline.data?.pages.flatMap((page: TimelinePage) => page.data) ?? [];
     if (filter === 'ALL') return allEntries;
-    return allEntries.filter((entry) => entry.action === filter);
+    return allEntries.filter((entry: TimelineEntry) => entry.action === filter);
   }, [timeline.data, filter]);
 
   if (timeline.isLoading) {

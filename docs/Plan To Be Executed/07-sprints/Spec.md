@@ -44,6 +44,19 @@ src/
 
 ## Implementações
 
+## Integração com Tarefas (Plano 06)
+
+Este plano se conecta diretamente ao módulo de tarefas já implementado no Plano 06.
+Pontos já prontos no módulo de tarefas:
+- `TaskForm` possui `SprintSelector` e aceita `sprint_id` no payload de criação/edição.
+- `TasksListScreen` suporta filtro por `sprint_id` (via `TaskFiltersModal`).
+- API de tarefas aceita `sprint_id` em `tasksApi.list` para filtrar tarefas por sprint.
+
+O que ainda precisa ser conectado quando este plano for executado:
+- Fornecer lista real de sprints para o `SprintSelector` e para os filtros (hoje está vazio).
+- `SprintDetailScreen` deve usar `useTasks` filtrado por `sprint_id`.
+- Navegação opcional da Sprint para o Kanban já existe via rota `TasksList`.
+
 ### 1. Sprints API (src/services/api/sprints.api.ts)
 
 ```typescript

@@ -10,6 +10,12 @@ import {
   ProjectSettingsScreen,
   ProjectsListScreen,
 } from '@/screens/projects';
+import {
+  TasksListScreen,
+  TaskDetailScreen,
+  TaskNewScreen,
+  TaskEditScreen,
+} from '@/screens/tasks';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<ProjectsStackParamList>();
@@ -57,18 +63,23 @@ export function ProjectsStack() {
 
       <Stack.Screen
         name="TasksList"
-        component={PlaceholderScreen}
+        component={TasksListScreen}
         options={{ title: 'Tarefas' }}
       />
       <Stack.Screen
         name="TaskDetail"
-        component={PlaceholderScreen}
+        component={TaskDetailScreen}
         options={{ title: 'Tarefa' }}
       />
       <Stack.Screen
         name="TaskNew"
-        component={PlaceholderScreen}
+        component={TaskNewScreen}
         options={{ title: 'Nova Tarefa' }}
+      />
+      <Stack.Screen
+        name="TaskEdit"
+        component={TaskEditScreen}
+        options={{ title: 'Editar Tarefa' }}
       />
 
       <Stack.Screen

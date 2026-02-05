@@ -2,3 +2,4 @@ export * from './client';
 export * from './auth.api';
 export * from './dashboard.api';
 export * from './projects.api';
+export * from './caverna.api';

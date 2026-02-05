@@ -3,3 +3,4 @@ export * from './feedback';
 export * from './navigation';
 export * from './dashboard';
 export * from './projects';
+export * from './caverna';

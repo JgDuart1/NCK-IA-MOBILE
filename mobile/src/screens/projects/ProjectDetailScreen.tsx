@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 
 import { ProjectHeader, ProjectTabs, ProjectOverview } from '@/components/projects';
 import { LoadingScreen, ErrorState } from '@/components/feedback';
@@ -11,6 +12,12 @@ import { darkTheme, spacing } from '@/theme';
 import { MainTabsParamList, ProjectsScreenProps } from '@/navigation/types';
 
 type Props = ProjectsScreenProps<'ProjectDetail'>;
+
+type ProjectTab = {
+  key: string;
+  label: string;
+  icon: keyof typeof Ionicons.glyphMap;
+};
 
 export function ProjectDetailScreen({ route, navigation }: Props) {
   const { projectId } = route.params;
@@ -35,7 +42,7 @@ export function ProjectDetailScreen({ route, navigation }: Props) {
     );
   }
 
-  const tabs = [
+  const tabs: ProjectTab[] = [
     { key: 'overview', label: 'Visao Geral', icon: 'grid-outline' },
     { key: 'tasks', label: 'Tarefas', icon: 'checkbox-outline' },
     { key: 'sprints', label: 'Sprints', icon: 'layers-outline' },

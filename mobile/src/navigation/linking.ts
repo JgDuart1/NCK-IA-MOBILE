@@ -33,6 +33,9 @@ export const linking: LinkingOptions<RootStackParamList> = {
             screens: {
               Calendar: 'calendar',
               EventDetail: 'events/:eventId',
+              EventNew: 'events/new',
+              EventEdit: 'events/:eventId/edit',
+              MeetingRequestDetail: 'meeting-requests/:requestId',
             },
           },
           NotificationsTab: {

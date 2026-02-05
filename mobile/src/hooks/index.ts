@@ -1,4 +1,4 @@
-export * from './use-theme';
+﻿export * from './use-theme';
 export * from './use-auth';
 export * from './use-dashboard';
 export * from './use-projects';
@@ -13,3 +13,4 @@ export * from './use-notifications';
 export * from './use-push-notifications';
 export * from './use-tasks';
 export * from './use-task-mutations';
+export * from './use-canvas';

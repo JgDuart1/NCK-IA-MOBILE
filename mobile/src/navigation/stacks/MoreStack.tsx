@@ -1,4 +1,4 @@
-import React from 'react';
+ï»¿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
@@ -10,6 +10,7 @@ import {
   CavernaMinhasReservasScreen,
   ReservationDetailScreen,
 } from '@/screens/caverna';
+import { CanvasListScreen } from '@/screens/canvas';
 import {
   ProfileScreen,
   EditProfileScreen,
@@ -56,7 +57,7 @@ export function MoreStack() {
       <Stack.Screen
         name="InviteUser"
         component={InviteUserScreen}
-        options={{ title: 'Convidar Usuário' }}
+        options={{ title: 'Convidar UsuÃ¡rio' }}
       />
       <Stack.Screen
         name="PendingInvites"
@@ -67,7 +68,7 @@ export function MoreStack() {
       <Stack.Screen
         name="Settings"
         component={SettingsScreen}
-        options={{ title: 'Configurações' }}
+        options={{ title: 'ConfiguraÃ§Ãµes' }}
       />
       <Stack.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />
 
@@ -80,14 +81,14 @@ export function MoreStack() {
 
       <Stack.Screen
         name="CanvasList"
-        component={PlaceholderScreen}
+        component={CanvasListScreen}
         options={{ title: 'Business Canvas' }}
       />
 
       <Stack.Screen
         name="CavernaHome"
         component={CavernaHomeScreen}
-        options={{ title: 'Caverna do Dragão' }}
+        options={{ title: 'Caverna do DragÃ£o' }}
       />
       <Stack.Screen
         name="CavernaReservar"

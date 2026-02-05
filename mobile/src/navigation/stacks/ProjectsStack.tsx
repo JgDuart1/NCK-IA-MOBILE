@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ProjectsStackParamList } from '../types';
@@ -10,6 +10,14 @@ import {
   ProjectSettingsScreen,
   ProjectsListScreen,
 } from '@/screens/projects';
+import {
+  CanvasListScreen,
+  CanvasNewScreen,
+  CanvasDetailScreen,
+  BlockEditorScreen,
+  AssumptionsScreen,
+  ExperimentsScreen,
+} from '@/screens/canvas';
 import {
   TasksListScreen,
   TaskDetailScreen,
@@ -116,13 +124,33 @@ export function ProjectsStack() {
 
       <Stack.Screen
         name="ProjectCanvas"
-        component={PlaceholderScreen}
+        component={CanvasListScreen}
         options={{ title: 'Canvas' }}
       />
       <Stack.Screen
         name="CanvasDetail"
-        component={PlaceholderScreen}
+        component={CanvasDetailScreen}
         options={{ title: 'Business Canvas' }}
+      />
+      <Stack.Screen
+        name="CanvasNew"
+        component={CanvasNewScreen}
+        options={{ title: 'Novo Canvas' }}
+      />
+      <Stack.Screen
+        name="BlockEditor"
+        component={BlockEditorScreen}
+        options={{ title: 'Editar Bloco' }}
+      />
+      <Stack.Screen
+        name="Assumptions"
+        component={AssumptionsScreen}
+        options={{ title: 'Assumptions' }}
+      />
+      <Stack.Screen
+        name="Experiments"
+        component={ExperimentsScreen}
+        options={{ title: 'Experimentos' }}
       />
     </Stack.Navigator>
   );

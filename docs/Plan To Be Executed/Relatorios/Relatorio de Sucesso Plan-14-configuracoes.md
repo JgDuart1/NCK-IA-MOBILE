@@ -7,9 +7,11 @@ Status: concluido e pronto para merge
 Resumo
 - Implementadas as telas de Configuracoes e Sobre o app.
 - Criados componentes reutilizaveis para itens, secoes e links de configuracao.
-- Implementado cacheService para leitura e limpeza de cache.
+- Implementado cacheService para leitura e limpeza de cache (usando expo-file-system legacy).
 - Adicionado hook useSettings para persistencia de preferencias.
 - Ajustada a navegacao do MoreStack para apontar para as novas telas.
+- Ajustado tsconfig e criado shim de tipos para compatibilidade do typecheck.
+- Tipagem adicionada em MagicLinkEmailScreen para satisfazer typecheck.
 
 Entregas do plano
 - Tela de configuracoes com toggles de notificacao, cache e logout
@@ -33,9 +35,13 @@ Arquivos principais
 - mobile/src/hooks/index.ts
 - mobile/src/components/index.ts
 - mobile/src/navigation/stacks/MoreStack.tsx
+- mobile/src/types/shims.d.ts
+- mobile/tsconfig.json
+- mobile/src/screens/auth/MagicLinkEmailScreen.tsx
 
 Testes e verificacoes
-- npm run typecheck (falhou: tsc nao encontrado no ambiente)
+- npm install
+- npm run typecheck
 
 Observacoes
 - Nao houve instalacao de novas dependencias.

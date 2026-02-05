@@ -3,6 +3,8 @@
   "compilerOptions": {
     "strict": true,
     "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "customConditions": ["react-native", "default", "types", "import", "require"],
     "paths": {
       "@/*": ["src/*"]
     }

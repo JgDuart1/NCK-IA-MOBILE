@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useForm, Controller } from 'react-hook-form';
@@ -14,6 +14,10 @@ const schema = z.object({
   email: z.string().email('Email inválido'),
 });
 
+type MagicLinkForm = {
+  email: string;
+};
+
 export function MagicLinkEmailScreen({ navigation }: any) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,12 +25,12 @@ export function MagicLinkEmailScreen({ navigation }: any) {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<MagicLinkForm>({
     resolver: zodResolver(schema),
     defaultValues: { email: '' },
   });
 
-  const onSubmit = async (data: { email: string }) => {
+  const onSubmit = async (data: MagicLinkForm) => {
     setIsLoading(true);
     try {
       await authApi.requestMagicLink(data.email);

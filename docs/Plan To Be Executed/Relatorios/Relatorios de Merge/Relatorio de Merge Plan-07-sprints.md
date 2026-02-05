@@ -27,7 +27,7 @@ Conflitos
 - Nenhum.
 
 Validacoes
-- npm run typecheck (falhou: tsc nao encontrado no ambiente)
+- npm run typecheck (ok)
 
 Observacoes
 - Main atualizado e push concluido.

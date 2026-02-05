@@ -34,7 +34,7 @@ Arquivos principais
 - mobile/src/navigation/types.ts
 
 Testes e verificacoes
-- npm run typecheck (falhou: tsc nao encontrado no ambiente)
+- npm run typecheck (ok)
 - Testes manuais nao executados neste ambiente
 
 Observacoes

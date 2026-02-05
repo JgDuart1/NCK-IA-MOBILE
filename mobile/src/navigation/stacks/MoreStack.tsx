@@ -1,4 +1,4 @@
-import React from 'react';
+ï»¿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
@@ -17,6 +17,13 @@ import {
   InviteUserScreen,
   PendingInvitesScreen,
 } from '@/screens/profile';
+import {
+  NotesListScreen,
+  NoteFoldersScreen,
+  NoteDetailScreen,
+  NoteNewScreen,
+  NoteVersionsScreen,
+} from '@/screens/notes';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -56,7 +63,7 @@ export function MoreStack() {
       <Stack.Screen
         name="InviteUser"
         component={InviteUserScreen}
-        options={{ title: 'Convidar Usuário' }}
+        options={{ title: 'Convidar UsuÃ¡rio' }}
       />
       <Stack.Screen
         name="PendingInvites"
@@ -67,15 +74,22 @@ export function MoreStack() {
       <Stack.Screen
         name="Settings"
         component={SettingsScreen}
-        options={{ title: 'Configurações' }}
+        options={{ title: 'ConfiguraÃ§Ãµes' }}
       />
       <Stack.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />
 
-      <Stack.Screen name="NotesList" component={PlaceholderScreen} options={{ title: 'Notas' }} />
+      <Stack.Screen name="NotesList" component={NotesListScreen} options={{ title: 'Notas' }} />
       <Stack.Screen
         name="NoteFolders"
-        component={PlaceholderScreen}
+        component={NoteFoldersScreen}
         options={{ title: 'Pastas' }}
+      />
+      <Stack.Screen name="NoteDetail" component={NoteDetailScreen} options={{ title: 'Nota' }} />
+      <Stack.Screen name="NoteNew" component={NoteNewScreen} options={{ title: 'Nova Nota' }} />
+      <Stack.Screen
+        name="NoteVersions"
+        component={NoteVersionsScreen}
+        options={{ title: 'VersÃµes' }}
       />
 
       <Stack.Screen
@@ -87,7 +101,7 @@ export function MoreStack() {
       <Stack.Screen
         name="CavernaHome"
         component={CavernaHomeScreen}
-        options={{ title: 'Caverna do Dragão' }}
+        options={{ title: 'Caverna do DragÃ£o' }}
       />
       <Stack.Screen
         name="CavernaReservar"

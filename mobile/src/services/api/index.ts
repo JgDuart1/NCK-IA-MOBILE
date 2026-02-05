@@ -1,4 +1,4 @@
-export * from './client';
+﻿export * from './client';
 export * from './auth.api';
 export * from './dashboard.api';
 export * from './projects.api';
@@ -9,3 +9,5 @@ export * from './users.api';
 export * from './notifications.api';
 export * from './tasks.api';
 export * from './sprints.api';
+export * from './notes.api';
+export * from './note-folders.api';

@@ -1,4 +1,4 @@
-import { NavigatorScreenParams } from '@react-navigation/native';
+﻿import { NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 
@@ -29,6 +29,7 @@ export type ProjectsStackParamList = {
   ProjectNotes: { projectId: string };
   NoteDetail: { noteId: string };
   NoteNew: { projectId?: string; folderId?: string };
+  NoteVersions: { noteId: string };
   ProjectCanvas: { projectId: string };
   CanvasDetail: { canvasId: string };
 };
@@ -56,6 +57,9 @@ export type MoreStackParamList = {
   About: undefined;
   NotesList: undefined;
   NoteFolders: undefined;
+  NoteDetail: { noteId: string };
+  NoteNew: { projectId?: string; folderId?: string };
+  NoteVersions: { noteId: string };
   CanvasList: undefined;
   CavernaHome: undefined;
   CavernaReservar: undefined;

@@ -1,4 +1,4 @@
-export * from './ui';
+﻿export * from './ui';
 export * from './feedback';
 export * from './navigation';
 export * from './dashboard';
@@ -9,3 +9,4 @@ export * from './profile';
 export * from './notifications';
 export * from './tasks';
 export * from './sprints';
+export * from './notes';

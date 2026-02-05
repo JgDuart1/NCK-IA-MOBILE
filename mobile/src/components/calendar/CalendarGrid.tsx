@@ -25,7 +25,7 @@ export function CalendarGrid({
   const firstDay = new Date(year, month, 1).getDay();
   const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-  const days: Array<number | null> = [];
+  const days: (number | null)[] = [];
 
   for (let i = 0; i < firstDay; i += 1) {
     days.push(null);

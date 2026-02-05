@@ -50,18 +50,18 @@ export function useEventsByMonth(year: number, month: number, projectId?: string
 }
 
 export function useEventsByDay(date: string | null, projectId?: string) {
-  if (!date) {
-    return useEvents({}, false);
-  }
+  const enabled = !!date;
+  const dayStart = date ? `${date}T00:00:00` : undefined;
+  const dayEnd = date ? `${date}T23:59:59` : undefined;
 
-  const dayStart = `${date}T00:00:00`;
-  const dayEnd = `${date}T23:59:59`;
-
-  return useEvents({
-    start_at_gte: dayStart,
-    start_at_lte: dayEnd,
-    project_id: projectId,
-  });
+  return useEvents(
+    {
+      start_at_gte: dayStart,
+      start_at_lte: dayEnd,
+      project_id: projectId,
+    },
+    enabled,
+  );
 }
 
 export function useCreateEvent() {

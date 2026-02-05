@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { meetingRequestsApi } from '@/services/api/meeting-requests.api';
-import { MeetingRequest } from '@/types';
 
 interface CreateMeetingRequestDto {
   title: string;

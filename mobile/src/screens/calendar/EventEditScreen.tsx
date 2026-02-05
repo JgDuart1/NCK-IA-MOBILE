@@ -100,7 +100,7 @@ export function EventEditScreen({ route, navigation }: Props) {
       });
 
       navigation.goBack();
-    } catch (error) {
+    } catch {
       Alert.alert('Erro', 'Nao foi possivel atualizar o evento.');
     }
   };

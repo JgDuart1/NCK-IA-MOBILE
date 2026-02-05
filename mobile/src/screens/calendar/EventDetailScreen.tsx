@@ -35,7 +35,7 @@ export function EventDetailScreen({ route, navigation }: Props) {
           try {
             await deleteEvent.mutateAsync(eventId);
             navigation.goBack();
-          } catch (error) {
+          } catch {
             Alert.alert('Erro', 'Nao foi possivel excluir o evento.');
           }
         },

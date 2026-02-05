@@ -87,7 +87,7 @@ export function EventNewScreen({ route, navigation }: Props) {
       });
 
       navigation.replace('EventDetail', { eventId: created.id });
-    } catch (error) {
+    } catch {
       Alert.alert('Erro', 'Nao foi possivel criar o evento.');
     }
   };

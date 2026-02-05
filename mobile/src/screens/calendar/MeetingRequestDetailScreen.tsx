@@ -34,7 +34,7 @@ export function MeetingRequestDetailScreen({ route, navigation }: Props) {
       await acceptMutation.mutateAsync(requestId);
       Alert.alert('Solicitacao aceita', 'O evento foi criado.');
       navigation.goBack();
-    } catch (error) {
+    } catch {
       Alert.alert('Erro', 'Nao foi possivel aceitar a solicitacao.');
     }
   };
@@ -44,7 +44,7 @@ export function MeetingRequestDetailScreen({ route, navigation }: Props) {
       await declineMutation.mutateAsync(requestId);
       Alert.alert('Solicitacao recusada', 'A resposta foi enviada.');
       navigation.goBack();
-    } catch (error) {
+    } catch {
       Alert.alert('Erro', 'Nao foi possivel recusar a solicitacao.');
     }
   };

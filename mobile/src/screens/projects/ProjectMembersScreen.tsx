@@ -33,8 +33,9 @@ export function ProjectMembersScreen({ route }: Props) {
   const [editingMember, setEditingMember] = useState<ProjectMember | null>(null);
 
   const handleAddMember = async () => {
+    const normalizedUserId = userId.trim();
     try {
-      await addMember.mutateAsync({ userId, role });
+      await addMember.mutateAsync({ userId: normalizedUserId, role });
       Toast.show({
         type: 'success',
         text1: 'Membro adicionado',

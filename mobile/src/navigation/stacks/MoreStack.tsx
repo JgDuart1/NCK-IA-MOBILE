@@ -1,8 +1,9 @@
-import React from 'react';
+ï»¿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
 import { PlaceholderScreen } from '@/components/feedback';
+import { AboutScreen, SettingsScreen } from '@/screens/settings';
 import {
   CavernaHomeScreen,
   CavernaReservarScreen,
@@ -35,17 +36,9 @@ export function MoreStack() {
         animation: 'slide_from_right',
       }}
     >
-      <Stack.Screen
-        name="MoreMenu"
-        component={PlaceholderScreen}
-        options={{ title: 'Mais' }}
-      />
+      <Stack.Screen name="MoreMenu" component={PlaceholderScreen} options={{ title: 'Mais' }} />
 
-      <Stack.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{ title: 'Meu Perfil' }}
-      />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Meu Perfil' }} />
       <Stack.Screen
         name="EditProfile"
         component={EditProfileScreen}
@@ -59,7 +52,7 @@ export function MoreStack() {
       <Stack.Screen
         name="InviteUser"
         component={InviteUserScreen}
-        options={{ title: 'Convidar Usuário' }}
+        options={{ title: 'Convidar UsuÃ¡rio' }}
       />
       <Stack.Screen
         name="PendingInvites"
@@ -69,20 +62,12 @@ export function MoreStack() {
 
       <Stack.Screen
         name="Settings"
-        component={PlaceholderScreen}
-        options={{ title: 'Configurações' }}
+        component={SettingsScreen}
+        options={{ title: 'ConfiguraÃ§Ãµes' }}
       />
-      <Stack.Screen
-        name="About"
-        component={PlaceholderScreen}
-        options={{ title: 'Sobre' }}
-      />
+      <Stack.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />
 
-      <Stack.Screen
-        name="NotesList"
-        component={PlaceholderScreen}
-        options={{ title: 'Notas' }}
-      />
+      <Stack.Screen name="NotesList" component={PlaceholderScreen} options={{ title: 'Notas' }} />
       <Stack.Screen
         name="NoteFolders"
         component={PlaceholderScreen}
@@ -98,7 +83,7 @@ export function MoreStack() {
       <Stack.Screen
         name="CavernaHome"
         component={CavernaHomeScreen}
-        options={{ title: 'Caverna do Dragão' }}
+        options={{ title: 'Caverna do DragÃ£o' }}
       />
       <Stack.Screen
         name="CavernaReservar"

@@ -7,6 +7,7 @@ interface NotificationState {
 interface NotificationActions {
   setUnreadCount: (count: number) => void;
   incrementUnread: () => void;
+  decrementUnread: () => void;
   clearUnread: () => void;
 }
 
@@ -16,5 +17,7 @@ export const useNotificationStore = create<NotificationStore>((set) => ({
   unreadCount: 0,
   setUnreadCount: (count) => set({ unreadCount: count }),
   incrementUnread: () => set((state) => ({ unreadCount: state.unreadCount + 1 })),
+  decrementUnread: () =>
+    set((state) => ({ unreadCount: Math.max(0, state.unreadCount - 1) })),
   clearUnread: () => set({ unreadCount: 0 }),
 }));

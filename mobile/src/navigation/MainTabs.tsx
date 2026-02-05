@@ -10,6 +10,7 @@ import { NotificationsStack } from './stacks/NotificationsStack';
 import { MoreStack } from './stacks/MoreStack';
 import { MainTabsParamList } from './types';
 import { darkTheme } from '@/theme';
+import { usePushNotifications, useUnreadCount } from '@/hooks';
 
 const Tab = createBottomTabNavigator<MainTabsParamList>();
 
@@ -31,6 +32,8 @@ const TAB_LABELS: Record<keyof MainTabsParamList, string> = {
 
 export function MainTabs() {
   const unreadCount = useNotificationStore((state) => state.unreadCount);
+  usePushNotifications();
+  useUnreadCount();
 
   return (
     <Tab.Navigator

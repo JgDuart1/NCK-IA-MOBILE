@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { NotificationsStackParamList } from '../types';
-import { PlaceholderScreen } from '@/components/feedback';
+import { NotificationsListScreen } from '@/screens/notifications';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<NotificationsStackParamList>();
@@ -24,8 +24,8 @@ export function NotificationsStack() {
     >
       <Stack.Screen
         name="NotificationsList"
-        component={PlaceholderScreen}
-        options={{ title: 'Notificações' }}
+        component={NotificationsListScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );

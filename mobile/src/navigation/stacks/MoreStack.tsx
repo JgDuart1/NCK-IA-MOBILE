@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
@@ -10,6 +10,13 @@ import {
   CavernaMinhasReservasScreen,
   ReservationDetailScreen,
 } from '@/screens/caverna';
+import {
+  ProfileScreen,
+  EditProfileScreen,
+  ChangePasswordScreen,
+  InviteUserScreen,
+  PendingInvitesScreen,
+} from '@/screens/profile';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -31,32 +38,36 @@ export function MoreStack() {
     >
       <Stack.Screen name="MoreMenu" component={PlaceholderScreen} options={{ title: 'Mais' }} />
 
-      <Stack.Screen name="Profile" component={PlaceholderScreen} options={{ title: 'Meu Perfil' }} />
+      <Stack.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{ title: 'Meu Perfil' }}
+      />
       <Stack.Screen
         name="EditProfile"
-        component={PlaceholderScreen}
+        component={EditProfileScreen}
         options={{ title: 'Editar Perfil' }}
       />
       <Stack.Screen
         name="ChangePassword"
-        component={PlaceholderScreen}
+        component={ChangePasswordScreen}
         options={{ title: 'Alterar Senha' }}
       />
       <Stack.Screen
         name="InviteUser"
-        component={PlaceholderScreen}
-        options={{ title: 'Convidar UsuÃ¡rio' }}
+        component={InviteUserScreen}
+        options={{ title: 'Convidar Usuário' }}
       />
       <Stack.Screen
         name="PendingInvites"
-        component={PlaceholderScreen}
+        component={PendingInvitesScreen}
         options={{ title: 'Convites Pendentes' }}
       />
 
       <Stack.Screen
         name="Settings"
         component={SettingsScreen}
-        options={{ title: 'ConfiguraÃ§Ãµes' }}
+        options={{ title: 'Configurações' }}
       />
       <Stack.Screen name="About" component={AboutScreen} options={{ title: 'Sobre' }} />
 
@@ -76,7 +87,7 @@ export function MoreStack() {
       <Stack.Screen
         name="CavernaHome"
         component={CavernaHomeScreen}
-        options={{ title: 'Caverna do DragÃ£o' }}
+        options={{ title: 'Caverna do Dragão' }}
       />
       <Stack.Screen
         name="CavernaReservar"

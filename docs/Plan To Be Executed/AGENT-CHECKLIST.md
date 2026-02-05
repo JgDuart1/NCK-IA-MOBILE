@@ -10,6 +10,7 @@ Este documento é o checklist que **todo agente** deve seguir antes de considera
 - [ ] Li o `LIBRARIES-REFERENCE.md` (bibliotecas aprovadas)
 - [ ] Li o `dependencies.md` do meu plano
 - [ ] Li o `dependencies.md` dos planos que consumo
+- [ ] Estou no worktree correto (pasta dedicada do plano)
 - [ ] Estou na branch correta: `mobile/XX-nome-plano`
 
 ---

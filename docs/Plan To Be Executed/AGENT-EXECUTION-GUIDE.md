@@ -16,6 +16,26 @@ mobile/03-navigation
 mobile/15-deployment
 ```
 
+### Execução Paralela com Git Worktree (OBRIGATÓRIO)
+Para rodar agentes em paralelo sem conflito de branch, **cada agente deve trabalhar em um worktree dedicado**.  
+Isso evita que um `git checkout` afete o terminal de outro agente.
+
+**Regra de ouro:** nunca execute `git checkout` no repositório principal enquanto outros agentes estiverem trabalhando.  
+O repositório principal serve apenas para criar/atualizar worktrees.
+
+**Fluxo padrão (exemplo do Plano 04):**
+```bash
+# No repositório principal
+git checkout main
+git pull origin main
+git worktree add ../NCK-IA-MOBILE-04-dashboard mobile/04-dashboard
+
+# Trabalhar sempre dentro do worktree do plano
+cd ../NCK-IA-MOBILE-04-dashboard
+```
+
+**Dica:** abra uma janela/terminal por worktree (VS Code ou PowerShell) e mantenha cada agente preso ao seu diretório.
+
 ### 1 Prompt por Agente
 Você dará 1 prompt para cada agente. O agente lerá a documentação e executará o plano.
 
@@ -61,12 +81,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Atualize a main: git checkout main && git pull origin main
-2. Crie a branch: git checkout -b mobile/01-estrutura-base
-2. Crie o projeto Expo na pasta /mobile
-3. Implemente exatamente o que está no Spec.md
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [01] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-01-estrutura-base mobile/01-estrutura-base`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-01-estrutura-base`
+4. Crie o projeto Expo na pasta /mobile
+5. Implemente exatamente o que está no Spec.md
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [01] descrição
 
 ## Entrega
 - Projeto Expo funcional
@@ -95,11 +116,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/02-auth
-2. Implemente autenticação conforme Spec.md
-3. Use SecureStore para tokens
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [02] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-02-auth mobile/02-auth`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-02-auth`
+4. Implemente autenticação conforme Spec.md
+5. Use SecureStore para tokens
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [02] descrição
 
 ## Entrega
 - Telas de Login e MagicLink
@@ -127,11 +150,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/03-navigation
-2. Configure React Navigation conforme Spec.md
-3. Crie PlaceholderScreen para telas ainda não implementadas
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [03] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-03-navigation mobile/03-navigation`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-03-navigation`
+4. Configure React Navigation conforme Spec.md
+5. Crie PlaceholderScreen para telas ainda não implementadas
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [03] descrição
 
 ## Entrega
 - RootNavigator com auth check
@@ -159,11 +184,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/04-dashboard
-2. Implemente Dashboard conforme Spec.md
-3. Substitua PlaceholderScreen pela tela real na HomeStack
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [04] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-04-dashboard mobile/04-dashboard`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-04-dashboard`
+4. Implemente Dashboard conforme Spec.md
+5. Substitua PlaceholderScreen pela tela real na HomeStack
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [04] descrição
 
 ## Entrega
 - Tela Dashboard com stats
@@ -191,11 +218,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/05-projetos
-2. Implemente módulo de Projetos conforme Spec.md
-3. Substitua PlaceholderScreens na ProjectsStack
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [05] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-05-projetos mobile/05-projetos`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-05-projetos`
+4. Implemente módulo de Projetos conforme Spec.md
+5. Substitua PlaceholderScreens na ProjectsStack
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [05] descrição
 
 ## Entrega
 - Lista de projetos
@@ -224,11 +253,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/06-tarefas-kanban
-2. Implemente Kanban conforme Spec.md
-3. Use DRAG-DROP-IMPLEMENTATION.md como guia
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [06] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-06-tarefas-kanban mobile/06-tarefas-kanban`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-06-tarefas-kanban`
+4. Implemente Kanban conforme Spec.md
+5. Use DRAG-DROP-IMPLEMENTATION.md como guia
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [06] descrição
 
 ## Entrega
 - Kanban com colunas de status
@@ -256,10 +287,12 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/07-sprints
-2. Implemente módulo de Sprints conforme Spec.md
-3. Siga o AGENT-CHECKLIST.md antes de finalizar
-4. Commits com padrão: [07] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-07-sprints mobile/07-sprints`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-07-sprints`
+4. Implemente módulo de Sprints conforme Spec.md
+5. Siga o AGENT-CHECKLIST.md antes de finalizar
+6. Commits com padrão: [07] descrição
 
 ## Entrega
 - Lista de sprints
@@ -287,10 +320,12 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/08-notas
-2. Implemente módulo de Notas conforme Spec.md
-3. Siga o AGENT-CHECKLIST.md antes de finalizar
-4. Commits com padrão: [08] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-08-notas mobile/08-notas`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-08-notas`
+4. Implemente módulo de Notas conforme Spec.md
+5. Siga o AGENT-CHECKLIST.md antes de finalizar
+6. Commits com padrão: [08] descrição
 
 ## Entrega
 - Lista de notas
@@ -319,11 +354,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/09-calendario
-2. Implemente Calendário conforme Spec.md
-3. Use componente customizado (NÃO react-native-calendars)
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [09] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-09-calendario mobile/09-calendario`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-09-calendario`
+4. Implemente Calendário conforme Spec.md
+5. Use componente customizado (NÃO react-native-calendars)
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [09] descrição
 
 ## Entrega
 - Visualização de calendário mensal
@@ -351,11 +388,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/10-notificacoes
-2. Implemente Notificações conforme Spec.md
-3. Use expo-notifications para push
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [10] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-10-notificacoes mobile/10-notificacoes`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-10-notificacoes`
+4. Implemente Notificações conforme Spec.md
+5. Use expo-notifications para push
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [10] descrição
 
 ## Entrega
 - Lista de notificações
@@ -383,11 +422,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/11-business-model-canvas
-2. Implemente Canvas conforme Spec.md
-3. Use ScrollView horizontal paginado para os 9 blocos
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [11] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-11-business-model-canvas mobile/11-business-model-canvas`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-11-business-model-canvas`
+4. Implemente Canvas conforme Spec.md
+5. Use ScrollView horizontal paginado para os 9 blocos
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [11] descrição
 
 ## Entrega
 - Lista de canvas
@@ -415,10 +456,12 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/12-caverna-dragao
-2. Implemente Caverna do Dragão conforme Spec.md
-3. Siga o AGENT-CHECKLIST.md antes de finalizar
-4. Commits com padrão: [12] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-12-caverna-dragao mobile/12-caverna-dragao`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-12-caverna-dragao`
+4. Implemente Caverna do Dragão conforme Spec.md
+5. Siga o AGENT-CHECKLIST.md antes de finalizar
+6. Commits com padrão: [12] descrição
 
 ## Entrega
 - Sistema de reservas
@@ -446,11 +489,13 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/13-usuarios-perfil
-2. Implemente Perfil conforme Spec.md
-3. Use expo-image-picker para avatar
-4. Siga o AGENT-CHECKLIST.md antes de finalizar
-5. Commits com padrão: [13] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-13-usuarios-perfil mobile/13-usuarios-perfil`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-13-usuarios-perfil`
+4. Implemente Perfil conforme Spec.md
+5. Use expo-image-picker para avatar
+6. Siga o AGENT-CHECKLIST.md antes de finalizar
+7. Commits com padrão: [13] descrição
 
 ## Entrega
 - Tela de perfil
@@ -478,10 +523,12 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/14-configuracoes
-2. Implemente Configurações conforme Spec.md
-3. Siga o AGENT-CHECKLIST.md antes de finalizar
-4. Commits com padrão: [14] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-14-configuracoes mobile/14-configuracoes`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-14-configuracoes`
+4. Implemente Configurações conforme Spec.md
+5. Siga o AGENT-CHECKLIST.md antes de finalizar
+6. Commits com padrão: [14] descrição
 
 ## Entrega
 - Tela de configurações
@@ -509,12 +556,14 @@ Leia os seguintes arquivos antes de começar:
 - docs/Plan To Be Executed/AGENT-CHECKLIST.md
 
 ## Instruções
-1. Crie a branch: git checkout -b mobile/15-deployment
-2. Configure assets e builds conforme Spec.md
-3. PRIORIDADE: Configurar APK Download (Fase 1)
-4. OPCIONAL: Preparar Google Play Store (Fase 2)
-5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Commits com padrão: [15] descrição
+1. No repositório principal: `git checkout main && git pull origin main`
+2. Crie o worktree: `git worktree add ../NCK-IA-MOBILE-15-deployment mobile/15-deployment`
+3. Entre no worktree: `cd ../NCK-IA-MOBILE-15-deployment`
+4. Configure assets e builds conforme Spec.md
+5. PRIORIDADE: Configurar APK Download (Fase 1)
+6. OPCIONAL: Preparar Google Play Store (Fase 2)
+7. Siga o AGENT-CHECKLIST.md antes de finalizar
+8. Commits com padrão: [15] descrição
 
 ## Entrega
 - Assets criados (ícones, splash)
@@ -546,9 +595,9 @@ main ← mobile/15-deployment
 
 ## Dicas
 
-1. **Sempre fazer `git pull origin main` antes de criar a branch**
+1. **Sempre fazer `git pull origin main` antes de criar o worktree**
 2. **Cada agente deve ler toda a documentação antes de começar**
-2. **Usar AGENT-CHECKLIST.md como verificação final**
-3. **Seguir LIBRARIES-REFERENCE.md para evitar instalar bibliotecas erradas**
-4. **Commits pequenos e frequentes**
-5. **Testar no emulador antes de finalizar**
+3. **Usar AGENT-CHECKLIST.md como verificação final**
+4. **Seguir LIBRARIES-REFERENCE.md para evitar instalar bibliotecas erradas**
+5. **Commits pequenos e frequentes**
+6. **Testar no emulador antes de finalizar**

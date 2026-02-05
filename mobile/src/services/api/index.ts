@@ -11,3 +11,4 @@ export * from './tasks.api';
 export * from './sprints.api';
 export * from './notes.api';
 export * from './note-folders.api';
+export * from './canvas.api';

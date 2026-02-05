@@ -17,3 +17,4 @@ export * from './use-sprints';
 export * from './use-notes';
 export * from './use-note-folders';
 export * from './use-debounce';
+export * from './use-canvas';

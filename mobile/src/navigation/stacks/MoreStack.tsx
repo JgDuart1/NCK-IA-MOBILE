@@ -10,6 +10,7 @@ import {
   CavernaMinhasReservasScreen,
   ReservationDetailScreen,
 } from '@/screens/caverna';
+import { CanvasListScreen } from '@/screens/canvas';
 import {
   ProfileScreen,
   EditProfileScreen,
@@ -94,7 +95,7 @@ export function MoreStack() {
 
       <Stack.Screen
         name="CanvasList"
-        component={PlaceholderScreen}
+        component={CanvasListScreen}
         options={{ title: 'Business Canvas' }}
       />
 

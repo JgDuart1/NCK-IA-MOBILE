@@ -1,6 +1,7 @@
 ﻿import { NavigatorScreenParams } from '@react-navigation/native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { CanvasBlocks } from '@/types';
 
 export type AuthStackParamList = {
   Login: undefined;
@@ -31,7 +32,11 @@ export type ProjectsStackParamList = {
   NoteNew: { projectId?: string; folderId?: string };
   NoteVersions: { noteId: string };
   ProjectCanvas: { projectId: string };
+  CanvasNew: { projectId: string };
   CanvasDetail: { canvasId: string };
+  BlockEditor: { canvasId: string; blockKey: keyof CanvasBlocks };
+  Assumptions: { canvasId: string };
+  Experiments: { canvasId: string };
 };
 
 export type CalendarStackParamList = {

@@ -40,7 +40,7 @@ Dependencias adicionadas
 - Nenhuma
 
 Testes e verificacoes
-- npm run typecheck (falhou: tsc nao encontrado no ambiente)
+- npm run typecheck
 
 Observacoes
 - CanvasList via menu Mais agora permite selecionar um projeto antes de listar os canvas.

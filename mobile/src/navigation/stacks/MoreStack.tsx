@@ -3,6 +3,13 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { MoreStackParamList } from '../types';
 import { PlaceholderScreen } from '@/components/feedback';
+import {
+  ProfileScreen,
+  EditProfileScreen,
+  ChangePasswordScreen,
+  InviteUserScreen,
+  PendingInvitesScreen,
+} from '@/screens/profile';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -30,27 +37,27 @@ export function MoreStack() {
 
       <Stack.Screen
         name="Profile"
-        component={PlaceholderScreen}
+        component={ProfileScreen}
         options={{ title: 'Meu Perfil' }}
       />
       <Stack.Screen
         name="EditProfile"
-        component={PlaceholderScreen}
+        component={EditProfileScreen}
         options={{ title: 'Editar Perfil' }}
       />
       <Stack.Screen
         name="ChangePassword"
-        component={PlaceholderScreen}
+        component={ChangePasswordScreen}
         options={{ title: 'Alterar Senha' }}
       />
       <Stack.Screen
         name="InviteUser"
-        component={PlaceholderScreen}
+        component={InviteUserScreen}
         options={{ title: 'Convidar Usuário' }}
       />
       <Stack.Screen
         name="PendingInvites"
-        component={PlaceholderScreen}
+        component={PendingInvitesScreen}
         options={{ title: 'Convites Pendentes' }}
       />
 

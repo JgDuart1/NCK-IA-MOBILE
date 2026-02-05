@@ -36,6 +36,8 @@
 | `useChangePassword` | Mutation senha |
 | `useInvites` | Lista de convites |
 | `useSendInvite` | Mutation convidar |
+| `useResendInvite` | Mutation reenviar convite |
+| `useCancelInvite` | Mutation cancelar convite |
 
 ---
 

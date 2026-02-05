@@ -1,5 +1,6 @@
 import { AxiosError, AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import { secureStorage } from '../storage';
+import { authEvents } from './auth-events';
 
 let isRefreshing = false;
 let failedQueue: {
@@ -82,6 +83,7 @@ export function setupInterceptors(client: AxiosInstance) {
         } catch (refreshError) {
           processQueue(refreshError as Error, null);
           await secureStorage.clearTokens();
+          authEvents.notifyUnauthorized();
           return Promise.reject(refreshError);
         } finally {
           isRefreshing = false;

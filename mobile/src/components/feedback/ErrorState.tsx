@@ -9,20 +9,35 @@ import { typography } from '../../theme/typography';
 interface ErrorStateProps {
   title?: string;
   description?: string;
+  message?: string;
   onRetry?: () => void;
+  action?: {
+    label: string;
+    onPress: () => void;
+  };
 }
 
 export function ErrorState({
   title = 'Ocorreu um erro',
   description = 'Nao foi possivel carregar os dados.',
+  message,
   onRetry,
+  action,
 }: ErrorStateProps) {
+  const finalMessage = message ?? description;
+  const showRetry = onRetry && !action;
+
   return (
     <View style={styles.container}>
       <Ionicons name="alert-circle-outline" size={48} color={darkTheme.textSecondary} />
       <Text style={styles.title}>{title}</Text>
-      <Text style={styles.description}>{description}</Text>
-      {onRetry ? (
+      <Text style={styles.description}>{finalMessage}</Text>
+      {action ? (
+        <Button variant="outline" onPress={action.onPress}>
+          {action.label}
+        </Button>
+      ) : null}
+      {showRetry ? (
         <Button variant="outline" onPress={onRetry}>
           Tentar novamente
         </Button>

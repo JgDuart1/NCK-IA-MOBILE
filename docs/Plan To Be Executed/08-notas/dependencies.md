@@ -1,43 +1,48 @@
-# Plano 08: Notas - Dependencies
+﻿# Plano 08: Notas - Dependencies
 
-## O Que Este Plano Provê
+## O Que Este Plano Prove
 
 ### Exports
 
 #### Screens (`src/screens/notes/`)
 
-| Export | Descrição |
+| Export | Descricao |
 |--------|-----------|
 | `NotesListScreen` | Lista de notas |
-| `NoteFoldersScreen` | Gestão de pastas |
+| `NoteFoldersScreen` | Gestao de pastas |
 | `NoteDetailScreen` | Editor de nota |
 | `NoteNewScreen` | Criar nota |
-| `NoteVersionsScreen` | Histórico de versões |
+| `NoteVersionsScreen` | Historico de versoes |
 
 #### Components (`src/components/notes/`)
 
-| Export | Descrição |
+| Export | Descricao |
 |--------|-----------|
 | `NoteCard` | Card de nota |
 | `NoteEditor` | Editor de texto |
 | `NoteToolbar` | Toolbar do editor |
 | `FolderSelector` | Seletor de pasta |
 | `FolderItem` | Item de pasta |
-| `FolderTree` | Árvore de pastas |
-| `VersionItem` | Item de versão |
+| `FolderTree` | Arvore de pastas |
+| `VersionItem` | Item de versao |
 | `NoteFilters` | Filtros de notas |
 
 #### Hooks (`src/hooks/`)
 
-| Export | Descrição |
+| Export | Descricao |
 |--------|-----------|
 | `useNotes` | Lista de notas |
 | `useNote` | Nota por ID |
 | `useCreateNote` | Mutation criar |
 | `useUpdateNote` | Mutation atualizar |
+| `useDeleteNote` | Mutation excluir |
 | `useAutoSaveNote` | Auto-save |
-| `useNoteVersions` | Versões da nota |
+| `useNoteVersions` | Versoes da nota |
 | `useNoteFolders` | Pastas |
+| `useCreateNoteFolder` | Criar pasta |
+| `useUpdateNoteFolder` | Atualizar pasta |
+| `useDeleteNoteFolder` | Excluir pasta |
+| `useDebounce` | Hook de debounce |
 
 ---
 
@@ -50,7 +55,7 @@
 | `Card`, `Avatar`, `Button`, `Input` | Componentes UI |
 | `Modal`, `Skeleton` | Componentes UI |
 | `attachmentService` | Upload/download |
-| `apiClient` | Requisições |
+| `apiClient` | Requisicoes |
 | `darkTheme`, `spacing`, `typography` | Estilos |
 
 ### Do Plano 02 (auth)
@@ -86,13 +91,13 @@ interface NoteCardProps {
 
 ### Auto-save
 
-O hook `useAutoSaveNote` salva automaticamente após 1 segundo de inatividade:
+O hook `useAutoSaveNote` salva automaticamente apos 1 segundo de inatividade:
 
 ```typescript
 const { save, isSaving } = useAutoSaveNote(noteId);
 
-// Chamar save() a cada mudança de conteúdo
-// isSaving indica se está salvando
+// Chamar save() a cada mudanca de conteudo
+// isSaving indica se esta salvando
 
 <TextInput
   value={content}
@@ -104,7 +109,7 @@ const { save, isSaving } = useAutoSaveNote(noteId);
 {isSaving && <Text>Salvando...</Text>}
 ```
 
-### Versões
+### Versoes
 
 ```typescript
 interface NoteVersion {

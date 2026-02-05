@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { ProjectsStackParamList } from '../types';
@@ -16,6 +16,12 @@ import {
   TaskNewScreen,
   TaskEditScreen,
 } from '@/screens/tasks';
+import {
+  NotesListScreen,
+  NoteDetailScreen,
+  NoteNewScreen,
+  NoteVersionsScreen,
+} from '@/screens/notes';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<ProjectsStackParamList>();
@@ -100,18 +106,15 @@ export function ProjectsStack() {
 
       <Stack.Screen
         name="ProjectNotes"
-        component={PlaceholderScreen}
+        component={NotesListScreen}
         options={{ title: 'Notas' }}
       />
+      <Stack.Screen name="NoteDetail" component={NoteDetailScreen} options={{ title: 'Nota' }} />
+      <Stack.Screen name="NoteNew" component={NoteNewScreen} options={{ title: 'Nova Nota' }} />
       <Stack.Screen
-        name="NoteDetail"
-        component={PlaceholderScreen}
-        options={{ title: 'Nota' }}
-      />
-      <Stack.Screen
-        name="NoteNew"
-        component={PlaceholderScreen}
-        options={{ title: 'Nova Nota' }}
+        name="NoteVersions"
+        component={NoteVersionsScreen}
+        options={{ title: 'Versões' }}
       />
 
       <Stack.Screen

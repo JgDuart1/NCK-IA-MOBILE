@@ -36,9 +36,9 @@ Arquivos principais
 - mobile/src/navigation/types.ts
 
 Testes e verificacoes
-- npm run typecheck (falhou: 'tsc' nao encontrado no ambiente)
+- npm run typecheck (falhou: falta de dependencias expo-notifications/expo-device no ambiente)
 - Testes manuais nao executados neste ambiente
 
 Observacoes
-- Drag & drop implementado com react-native-gesture-handler e react-native-reanimated.
+- Drag & drop implementado com react-native-gesture-handler (Gesture API) e react-native-reanimated.
 - Anexos usam attachmentService existente para upload e remocao.

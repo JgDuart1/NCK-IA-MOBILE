@@ -87,7 +87,7 @@ Leia os seguintes arquivos antes de começar:
 4. Crie o projeto Expo na pasta /mobile
 5. Implemente exatamente o que está no Spec.md
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [01] descrição
 
 ## Entrega
@@ -123,7 +123,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente autenticação conforme Spec.md
 5. Use SecureStore para tokens
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [02] descrição
 
 ## Entrega
@@ -158,7 +158,7 @@ Leia os seguintes arquivos antes de começar:
 4. Configure React Navigation conforme Spec.md
 5. Crie PlaceholderScreen para telas ainda não implementadas
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [03] descrição
 
 ## Entrega
@@ -193,7 +193,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Dashboard conforme Spec.md
 5. Substitua PlaceholderScreen pela tela real na HomeStack
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [04] descrição
 
 ## Entrega
@@ -228,7 +228,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente módulo de Projetos conforme Spec.md
 5. Substitua PlaceholderScreens na ProjectsStack
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [05] descrição
 
 ## Entrega
@@ -264,7 +264,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Kanban conforme Spec.md
 5. Use DRAG-DROP-IMPLEMENTATION.md como guia
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [06] descrição
 
 ## Entrega
@@ -298,7 +298,7 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-07-sprints`
 4. Implemente módulo de Sprints conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 7. Commits com padrão: [07] descrição
 
 ## Entrega
@@ -332,7 +332,7 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-08-notas`
 4. Implemente módulo de Notas conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 7. Commits com padrão: [08] descrição
 
 ## Entrega
@@ -368,7 +368,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Calendário conforme Spec.md
 5. Use componente customizado (NÃO react-native-calendars)
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [09] descrição
 
 ## Entrega
@@ -403,7 +403,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Notificações conforme Spec.md
 5. Use expo-notifications para push
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [10] descrição
 
 ## Entrega
@@ -438,7 +438,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Canvas conforme Spec.md
 5. Use ScrollView horizontal paginado para os 9 blocos
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [11] descrição
 
 ## Entrega
@@ -472,7 +472,7 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-12-caverna-dragao`
 4. Implemente Caverna do Dragão conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 7. Commits com padrão: [12] descrição
 
 ## Entrega
@@ -507,7 +507,7 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Perfil conforme Spec.md
 5. Use expo-image-picker para avatar
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 8. Commits com padrão: [13] descrição
 
 ## Entrega
@@ -541,7 +541,7 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-14-configuracoes`
 4. Implemente Configurações conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 7. Commits com padrão: [14] descrição
 
 ## Entrega
@@ -577,7 +577,7 @@ Leia os seguintes arquivos antes de começar:
 5. PRIORIDADE: Configurar APK Download (Fase 1)
 6. OPCIONAL: Preparar Google Play Store (Fase 2)
 7. Siga o AGENT-CHECKLIST.md antes de finalizar
-8. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação. Após o merge com a main, crie o relatório de merge em `docs/Plan To Be Executed/Relatorios/Relatorios de Merge` com resumo do merge, conflitos (se houver) e validações
 9. Commits com padrão: [15] descrição
 
 ## Entrega

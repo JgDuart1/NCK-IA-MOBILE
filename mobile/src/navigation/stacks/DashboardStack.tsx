@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import { DashboardStackParamList } from '../types';
-import { PlaceholderScreen } from '@/components/feedback';
+import { DashboardScreen } from '@/screens/dashboard';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<DashboardStackParamList>();
@@ -24,8 +24,8 @@ export function DashboardStack() {
     >
       <Stack.Screen
         name="Dashboard"
-        component={PlaceholderScreen}
-        options={{ title: 'Início' }}
+        component={DashboardScreen}
+        options={{ title: 'Inicio' }}
       />
     </Stack.Navigator>
   );

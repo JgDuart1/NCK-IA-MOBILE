@@ -14,6 +14,7 @@
 
 | Export | Descrição |
 |--------|-----------|
+| `DashboardHeader` | Header com saudação e ações |
 | `MetricCard` | Card de métrica individual |
 | `MetricsRow` | Linha de cards de métricas |
 | `QuickActions` | Botões de ação rápida |

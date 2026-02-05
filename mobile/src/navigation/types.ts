@@ -36,6 +36,7 @@ export type CalendarStackParamList = {
   Calendar: { projectId?: string };
   EventDetail: { eventId: string };
   EventNew: { date?: string; projectId?: string };
+  EventEdit: { eventId: string };
   MeetingRequestDetail: { requestId: string };
 };
 

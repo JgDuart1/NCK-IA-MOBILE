@@ -9,6 +9,13 @@ import {
   CavernaMinhasReservasScreen,
   ReservationDetailScreen,
 } from '@/screens/caverna';
+import {
+  ProfileScreen,
+  EditProfileScreen,
+  ChangePasswordScreen,
+  InviteUserScreen,
+  PendingInvitesScreen,
+} from '@/screens/profile';
 import { darkTheme } from '@/theme';
 
 const Stack = createNativeStackNavigator<MoreStackParamList>();
@@ -36,34 +43,34 @@ export function MoreStack() {
 
       <Stack.Screen
         name="Profile"
-        component={PlaceholderScreen}
+        component={ProfileScreen}
         options={{ title: 'Meu Perfil' }}
       />
       <Stack.Screen
         name="EditProfile"
-        component={PlaceholderScreen}
+        component={EditProfileScreen}
         options={{ title: 'Editar Perfil' }}
       />
       <Stack.Screen
         name="ChangePassword"
-        component={PlaceholderScreen}
+        component={ChangePasswordScreen}
         options={{ title: 'Alterar Senha' }}
       />
       <Stack.Screen
         name="InviteUser"
-        component={PlaceholderScreen}
-        options={{ title: 'Convidar UsuÃ¡rio' }}
+        component={InviteUserScreen}
+        options={{ title: 'Convidar Usuário' }}
       />
       <Stack.Screen
         name="PendingInvites"
-        component={PlaceholderScreen}
+        component={PendingInvitesScreen}
         options={{ title: 'Convites Pendentes' }}
       />
 
       <Stack.Screen
         name="Settings"
         component={PlaceholderScreen}
-        options={{ title: 'ConfiguraÃ§Ãµes' }}
+        options={{ title: 'Configurações' }}
       />
       <Stack.Screen
         name="About"
@@ -91,7 +98,7 @@ export function MoreStack() {
       <Stack.Screen
         name="CavernaHome"
         component={CavernaHomeScreen}
-        options={{ title: 'Caverna do DragÃ£o' }}
+        options={{ title: 'Caverna do Dragão' }}
       />
       <Stack.Screen
         name="CavernaReservar"
@@ -111,6 +118,3 @@ export function MoreStack() {
     </Stack.Navigator>
   );
 }
-
-
-

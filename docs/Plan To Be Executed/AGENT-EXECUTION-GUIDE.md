@@ -87,7 +87,8 @@ Leia os seguintes arquivos antes de começar:
 4. Crie o projeto Expo na pasta /mobile
 5. Implemente exatamente o que está no Spec.md
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [01] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [01] descrição
 
 ## Entrega
 - Projeto Expo funcional
@@ -122,7 +123,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente autenticação conforme Spec.md
 5. Use SecureStore para tokens
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [02] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [02] descrição
 
 ## Entrega
 - Telas de Login e MagicLink
@@ -156,7 +158,8 @@ Leia os seguintes arquivos antes de começar:
 4. Configure React Navigation conforme Spec.md
 5. Crie PlaceholderScreen para telas ainda não implementadas
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [03] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [03] descrição
 
 ## Entrega
 - RootNavigator com auth check
@@ -190,7 +193,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Dashboard conforme Spec.md
 5. Substitua PlaceholderScreen pela tela real na HomeStack
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [04] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [04] descrição
 
 ## Entrega
 - Tela Dashboard com stats
@@ -224,7 +228,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente módulo de Projetos conforme Spec.md
 5. Substitua PlaceholderScreens na ProjectsStack
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [05] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [05] descrição
 
 ## Entrega
 - Lista de projetos
@@ -259,7 +264,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Kanban conforme Spec.md
 5. Use DRAG-DROP-IMPLEMENTATION.md como guia
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [06] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [06] descrição
 
 ## Entrega
 - Kanban com colunas de status
@@ -292,7 +298,8 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-07-sprints`
 4. Implemente módulo de Sprints conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Commits com padrão: [07] descrição
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Commits com padrão: [07] descrição
 
 ## Entrega
 - Lista de sprints
@@ -325,7 +332,8 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-08-notas`
 4. Implemente módulo de Notas conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Commits com padrão: [08] descrição
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Commits com padrão: [08] descrição
 
 ## Entrega
 - Lista de notas
@@ -360,7 +368,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Calendário conforme Spec.md
 5. Use componente customizado (NÃO react-native-calendars)
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [09] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [09] descrição
 
 ## Entrega
 - Visualização de calendário mensal
@@ -394,7 +403,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Notificações conforme Spec.md
 5. Use expo-notifications para push
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [10] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [10] descrição
 
 ## Entrega
 - Lista de notificações
@@ -428,7 +438,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Canvas conforme Spec.md
 5. Use ScrollView horizontal paginado para os 9 blocos
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [11] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [11] descrição
 
 ## Entrega
 - Lista de canvas
@@ -461,7 +472,8 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-12-caverna-dragao`
 4. Implemente Caverna do Dragão conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Commits com padrão: [12] descrição
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Commits com padrão: [12] descrição
 
 ## Entrega
 - Sistema de reservas
@@ -495,7 +507,8 @@ Leia os seguintes arquivos antes de começar:
 4. Implemente Perfil conforme Spec.md
 5. Use expo-image-picker para avatar
 6. Siga o AGENT-CHECKLIST.md antes de finalizar
-7. Commits com padrão: [13] descrição
+7. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+8. Commits com padrão: [13] descrição
 
 ## Entrega
 - Tela de perfil
@@ -528,7 +541,8 @@ Leia os seguintes arquivos antes de começar:
 3. Entre no worktree: `cd ../NCK-IA-MOBILE-14-configuracoes`
 4. Implemente Configurações conforme Spec.md
 5. Siga o AGENT-CHECKLIST.md antes de finalizar
-6. Commits com padrão: [14] descrição
+6. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+7. Commits com padrão: [14] descrição
 
 ## Entrega
 - Tela de configurações
@@ -563,7 +577,8 @@ Leia os seguintes arquivos antes de começar:
 5. PRIORIDADE: Configurar APK Download (Fase 1)
 6. OPCIONAL: Preparar Google Play Store (Fase 2)
 7. Siga o AGENT-CHECKLIST.md antes de finalizar
-8. Commits com padrão: [15] descrição
+8. Crie o relatório em `docs/Plan To Be Executed/Relatorios` com tudo que foi feito, sucesso, mudanças e detalhes da operação
+9. Commits com padrão: [15] descrição
 
 ## Entrega
 - Assets criados (ícones, splash)

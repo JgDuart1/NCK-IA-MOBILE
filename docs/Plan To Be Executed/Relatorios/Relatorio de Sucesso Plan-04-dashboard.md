@@ -38,6 +38,7 @@ Implementado o Dashboard conforme o Spec.md, com tela principal, componentes de 
 ## Testes
 - `npm run typecheck` OK
 - `npm run lint` OK
+- `npm run format` com warnings em varios arquivos pre-existentes (nao relacionado apenas ao plano 04).
 - Testes manuais nao executados (ambiente sem emulador/dispositivo).
 
 ## Observacoes

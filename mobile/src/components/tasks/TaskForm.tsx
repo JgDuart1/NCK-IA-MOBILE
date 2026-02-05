@@ -12,7 +12,7 @@ import { z } from 'zod';
 import Toast from 'react-native-toast-message';
 
 import { Button, Input } from '@/components/ui';
-import { ProjectMember, Sprint, Attachment } from '@/types';
+import { ProjectMember, Sprint, Attachment, Task } from '@/types';
 import { darkTheme, spacing, typography } from '@/theme';
 import { zodResolver } from '@/utils/zod-resolver';
 import { attachmentService } from '@/services/attachments';

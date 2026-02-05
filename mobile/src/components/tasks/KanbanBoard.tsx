@@ -4,12 +4,12 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { Task } from '@/types';
 import { spacing } from '@/theme';
 import { KanbanColumn } from './KanbanColumn';
-import { KANBAN_COLUMNS } from './constants';
+import { KANBAN_COLUMNS, KanbanStatus } from './constants';
 
 interface KanbanBoardProps {
   tasks: Record<string, Task[]>;
   onTaskPress: (task: Task) => void;
-  onTaskDrop: (taskId: string, newStatus: string) => void;
+  onTaskDrop: (taskId: string, newStatus: KanbanStatus) => void;
   isLoading?: boolean;
 }
 

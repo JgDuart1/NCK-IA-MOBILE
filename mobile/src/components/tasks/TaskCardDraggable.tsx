@@ -1,27 +1,21 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import Animated, {
   useSharedValue,
   useAnimatedStyle,
-  useAnimatedGestureHandler,
   withSpring,
   runOnJS,
 } from 'react-native-reanimated';
-import {
-  PanGestureHandler,
-  PanGestureHandlerGestureEvent,
-  LongPressGestureHandler,
-  State,
-} from 'react-native-gesture-handler';
+import { Gesture, GestureDetector } from 'react-native-gesture-handler';
 
 import { Task } from '@/types';
 import { TaskCard } from './TaskCard';
-import { KANBAN_STATUSES, KANBAN_COLUMN_WIDTH } from './constants';
+import { KANBAN_STATUSES, KANBAN_COLUMN_WIDTH, KanbanStatus } from './constants';
 
 interface TaskCardDraggableProps {
   task: Task;
   onPress: () => void;
-  onDrop: (newStatus: string) => void;
+  onDrop: (newStatus: KanbanStatus) => void;
   columnIndex: number;
 }
 
@@ -41,41 +35,68 @@ export function TaskCardDraggable({
   const scale = useSharedValue(1);
   const zIndex = useSharedValue(0);
   const [dragEnabled, setDragEnabled] = useState(false);
+  const context = useSharedValue<ContextType>({ startX: 0, startY: 0 });
 
-  const gestureHandler = useAnimatedGestureHandler<
-    PanGestureHandlerGestureEvent,
-    ContextType
-  >({
-    onStart: (_, ctx) => {
-      ctx.startX = translateX.value;
-      ctx.startY = translateY.value;
-      scale.value = withSpring(1.05);
-      zIndex.value = 100;
-    },
-    onActive: (event, ctx) => {
-      translateX.value = ctx.startX + event.translationX;
-      translateY.value = ctx.startY + event.translationY;
-    },
-    onEnd: (event) => {
-      scale.value = withSpring(1);
-      zIndex.value = 0;
+  const panGesture = useMemo(() => {
+    return Gesture.Pan()
+      .enabled(dragEnabled)
+      .minDistance(10)
+      .onBegin(() => {
+        context.value = { startX: translateX.value, startY: translateY.value };
+        scale.value = withSpring(1.05);
+        zIndex.value = 100;
+      })
+      .onUpdate((event) => {
+        translateX.value = context.value.startX + event.translationX;
+        translateY.value = context.value.startY + event.translationY;
+      })
+      .onEnd((event) => {
+        scale.value = withSpring(1);
+        zIndex.value = 0;
 
-      const columnOffset = Math.round(event.translationX / KANBAN_COLUMN_WIDTH);
-      const newColumnIndex = Math.max(
-        0,
-        Math.min(KANBAN_STATUSES.length - 1, columnIndex + columnOffset)
-      );
+        const columnOffset = Math.round(event.translationX / KANBAN_COLUMN_WIDTH);
+        const newColumnIndex = Math.max(
+          0,
+          Math.min(KANBAN_STATUSES.length - 1, columnIndex + columnOffset)
+        );
 
-      if (newColumnIndex !== columnIndex) {
-        runOnJS(onDrop)(KANBAN_STATUSES[newColumnIndex]);
-      }
+        if (newColumnIndex !== columnIndex) {
+          runOnJS(onDrop)(KANBAN_STATUSES[newColumnIndex]);
+        }
 
-      translateX.value = withSpring(0);
-      translateY.value = withSpring(0, {}, () => {
+        translateX.value = withSpring(0);
+        translateY.value = withSpring(0, {}, () => {
+          runOnJS(setDragEnabled)(false);
+        });
+      })
+      .onFinalize(() => {
+        scale.value = withSpring(1);
+        zIndex.value = 0;
         runOnJS(setDragEnabled)(false);
       });
-    },
-  });
+  }, [
+    columnIndex,
+    context,
+    dragEnabled,
+    onDrop,
+    scale,
+    translateX,
+    translateY,
+    zIndex,
+  ]);
+
+  const longPressGesture = useMemo(
+    () =>
+      Gesture.LongPress()
+        .minDuration(200)
+        .onStart(() => {
+          runOnJS(setDragEnabled)(true);
+        })
+        .onEnd(() => {
+          runOnJS(setDragEnabled)(false);
+        }),
+    []
+  );
 
   const animatedStyle = useAnimatedStyle(() => ({
     transform: [
@@ -93,33 +114,11 @@ export function TaskCardDraggable({
   }));
 
   return (
-    <LongPressGestureHandler
-      minDurationMs={200}
-      onHandlerStateChange={({ nativeEvent }) => {
-        if (nativeEvent.state === State.ACTIVE) {
-          setDragEnabled(true);
-        } else if (
-          nativeEvent.state === State.END ||
-          nativeEvent.state === State.CANCELLED ||
-          nativeEvent.state === State.FAILED
-        ) {
-          setDragEnabled(false);
-        }
-      }}
-    >
-      <Animated.View>
-        <PanGestureHandler
-          enabled={dragEnabled}
-          onGestureEvent={gestureHandler}
-          minDist={10}
-          activeOffsetX={[-10, 10]}
-        >
-          <Animated.View style={[styles.card, animatedStyle, shadowStyle]}>
-            <TaskCard task={task} onPress={onPress} />
-          </Animated.View>
-        </PanGestureHandler>
+    <GestureDetector gesture={Gesture.Simultaneous(longPressGesture, panGesture)}>
+      <Animated.View style={[styles.card, animatedStyle, shadowStyle]}>
+        <TaskCard task={task} onPress={onPress} />
       </Animated.View>
-    </LongPressGestureHandler>
+    </GestureDetector>
   );
 }
 

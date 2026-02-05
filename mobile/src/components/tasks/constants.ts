@@ -14,4 +14,8 @@ export const KANBAN_COLUMNS = [
   { key: 'DONE', label: 'Concluido', color: colors.success },
 ] as const;
 
-export const KANBAN_STATUSES = KANBAN_COLUMNS.map((column) => column.key);
+export type KanbanStatus = (typeof KANBAN_COLUMNS)[number]['key'];
+
+export const KANBAN_STATUSES = KANBAN_COLUMNS.map(
+  (column) => column.key
+) as KanbanStatus[];

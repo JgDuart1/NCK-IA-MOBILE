@@ -4,7 +4,7 @@ import { FlatList, StyleSheet, Text, View } from 'react-native';
 import { Task } from '@/types';
 import { darkTheme, spacing, typography } from '@/theme';
 import { TaskCardDraggable } from './TaskCardDraggable';
-import { KANBAN_COLUMN_WIDTH } from './constants';
+import { KANBAN_COLUMN_WIDTH, KanbanStatus } from './constants';
 
 interface KanbanColumnProps {
   title: string;
@@ -13,7 +13,7 @@ interface KanbanColumnProps {
   status: string;
   columnIndex: number;
   onTaskPress: (task: Task) => void;
-  onTaskDrop: (taskId: string, newStatus: string) => void;
+  onTaskDrop: (taskId: string, newStatus: KanbanStatus) => void;
   isLoading?: boolean;
 }
 

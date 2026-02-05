@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Toast from 'react-native-toast-message';
 
 import { KanbanBoard, TaskFiltersModal, TaskFilters } from '@/components/tasks';
+import { KanbanStatus } from '@/components/tasks/constants';
 import { Button } from '@/components/ui';
 import { EmptyState, ErrorState, LoadingScreen } from '@/components/feedback';
 import { useProject } from '@/hooks/use-projects';
@@ -28,7 +29,7 @@ export function TasksListScreen({ route, navigation }: Props) {
   );
   const updateStatus = useUpdateTaskStatus();
 
-  const handleTaskDrop = async (taskId: string, newStatus: string) => {
+  const handleTaskDrop = async (taskId: string, newStatus: KanbanStatus) => {
     try {
       await updateStatus.mutateAsync({ id: taskId, status: newStatus });
     } catch (err: unknown) {

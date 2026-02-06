@@ -55,9 +55,10 @@ export const useAuthStore = create<AuthStore>((set) => {
       try {
         const response = await authApi.login(email, password);
         await secureStorage.setTokens(response.access_token, response.refresh_token);
+        const { tenant, ...user } = response.user;
         set({
-          user: response.user,
-          tenant: response.tenant,
+          user,
+          tenant,
           isAuthenticated: true,
         });
       } finally {
@@ -70,9 +71,10 @@ export const useAuthStore = create<AuthStore>((set) => {
       try {
         const response = await authApi.verifyMagicLink(token);
         await secureStorage.setTokens(response.access_token, response.refresh_token);
+        const { tenant, ...user } = response.user;
         set({
-          user: response.user,
-          tenant: response.tenant,
+          user,
+          tenant,
           isAuthenticated: true,
         });
       } finally {

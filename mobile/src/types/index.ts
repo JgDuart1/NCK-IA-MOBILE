@@ -363,8 +363,8 @@ export interface LoginRequest {
 export interface LoginResponse {
   access_token: string;
   refresh_token: string;
-  user: User;
-  tenant: Tenant;
+  expires_in: string;
+  user: User & { tenant: Tenant };
 }
 
 export interface RefreshRequest {

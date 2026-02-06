@@ -1,5 +1,6 @@
 import { apiClient } from './client';
 import { LoginResponse, MagicLinkRequest, Tenant, User } from '@/types';
+import { secureStorage } from '../storage';
 
 export const authApi = {
   async login(email: string, password: string): Promise<LoginResponse> {
@@ -11,7 +12,8 @@ export const authApi = {
   },
 
   async logout(): Promise<void> {
-    await apiClient.post('/auth/logout');
+    const refreshToken = await secureStorage.getRefreshToken();
+    await apiClient.post('/auth/logout', { refresh_token: refreshToken });
   },
 
   async getMe(): Promise<{ user: User; tenant: Tenant }> {
@@ -21,12 +23,12 @@ export const authApi = {
 
   async requestMagicLink(email: string): Promise<void> {
     const payload: MagicLinkRequest = { email };
-    await apiClient.post('/auth/magic-link', payload);
+    await apiClient.post('/auth/magic-link/request', payload);
   },
 
   async verifyMagicLink(token: string): Promise<LoginResponse> {
-    const response = await apiClient.post<LoginResponse>('/auth/magic-link/verify', {
-      token,
+    const response = await apiClient.get<LoginResponse>('/auth/magic-link/validate', {
+      params: { token },
     });
     return response.data;
   },

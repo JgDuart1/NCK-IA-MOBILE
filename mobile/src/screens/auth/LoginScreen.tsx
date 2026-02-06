@@ -47,7 +47,18 @@ export function LoginScreen({ navigation }: LoginScreenProps) {
     try {
       await login(data.email, data.password);
     } catch (err: any) {
-      const message = err.response?.data?.message || 'Email ou senha incorretos';
+      let message: string;
+      if (err.response?.data?.message) {
+        message = err.response.data.message;
+      } else if (err.response?.status) {
+        message = `Erro do servidor (${err.response.status})`;
+      } else if (err.code === 'ERR_NETWORK' || err.message?.includes('Network')) {
+        message = 'Erro de conexao com o servidor';
+      } else if (err.message) {
+        message = err.message;
+      } else {
+        message = 'Erro desconhecido ao fazer login';
+      }
       setError(message);
       Toast.show({
         type: 'error',

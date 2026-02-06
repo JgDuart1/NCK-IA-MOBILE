@@ -39,7 +39,24 @@ export const useAuthStore = create<AuthStore>((set) => {
       try {
         const token = await secureStorage.getAccessToken();
         if (token) {
-          const { user, tenant } = await authApi.getMe();
+          const meResponse = await authApi.getMe();
+          let user: any;
+          let tenant: any;
+
+          if (meResponse.tenant) {
+            // Format: { user: User, tenant: Tenant }
+            user = meResponse.user;
+            tenant = meResponse.tenant;
+          } else if (meResponse.user?.tenant) {
+            // Format: { user: User & { tenant: Tenant } } (same as login)
+            const { tenant: nestedTenant, ...userData } = meResponse.user as any;
+            user = userData;
+            tenant = nestedTenant;
+          } else {
+            user = meResponse.user;
+            tenant = null;
+          }
+
           set({ user, tenant, isAuthenticated: true });
         }
       } catch {
@@ -54,6 +71,14 @@ export const useAuthStore = create<AuthStore>((set) => {
       set({ isLoading: true });
       try {
         const response = await authApi.login(email, password);
+
+        if (!response?.access_token) {
+          throw new Error('Token de acesso ausente na resposta');
+        }
+        if (!response?.user) {
+          throw new Error('Dados do usuario ausentes na resposta');
+        }
+
         await secureStorage.setTokens(response.access_token, response.refresh_token);
         const { tenant, ...user } = response.user;
         set({
@@ -70,6 +95,14 @@ export const useAuthStore = create<AuthStore>((set) => {
       set({ isLoading: true });
       try {
         const response = await authApi.verifyMagicLink(token);
+
+        if (!response?.access_token) {
+          throw new Error('Token de acesso ausente na resposta');
+        }
+        if (!response?.user) {
+          throw new Error('Dados do usuario ausentes na resposta');
+        }
+
         await secureStorage.setTokens(response.access_token, response.refresh_token);
         const { tenant, ...user } = response.user;
         set({
@@ -100,7 +133,22 @@ export const useAuthStore = create<AuthStore>((set) => {
     },
 
     refreshUser: async () => {
-      const { user, tenant } = await authApi.getMe();
+      const meResponse = await authApi.getMe();
+      let user: any;
+      let tenant: any;
+
+      if (meResponse.tenant) {
+        user = meResponse.user;
+        tenant = meResponse.tenant;
+      } else if (meResponse.user?.tenant) {
+        const { tenant: nestedTenant, ...userData } = meResponse.user as any;
+        user = userData;
+        tenant = nestedTenant;
+      } else {
+        user = meResponse.user;
+        tenant = null;
+      }
+
       set({ user, tenant });
     },
 

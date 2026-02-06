@@ -13,20 +13,23 @@ export interface Role {
   id: string;
   type: 'SUPER_ADMIN' | 'NUCLEO_NCK' | 'AGENTE_NCK' | 'CLIENTE' | 'FORNECEDOR' | 'INVESTIDOR';
   name: string;
-  permissions: string[];
+  permissions: string[] | string;
 }
 
 export interface User {
   id: string;
   tenant_id: string;
+  role_id?: string;
   email: string;
   name: string;
   avatar_url?: string | null;
   status: 'PENDING' | 'ACTIVE' | 'INACTIVE' | 'BLOCKED';
   role: Role;
   last_login_at?: string | null;
+  created_by?: string | null;
   created_at: string;
   updated_at: string;
+  deleted_at?: string | null;
 }
 
 export interface Tenant {
@@ -335,8 +338,10 @@ export type TimelineAction =
   | 'VERSION_CREATED';
 
 export interface ApiResponse<T> {
+  success: boolean;
   data: T;
   message?: string;
+  timestamp?: string;
 }
 
 export interface PaginatedResponse<T> {

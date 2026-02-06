@@ -4,11 +4,11 @@ import { secureStorage } from '../storage';
 
 export const authApi = {
   async login(email: string, password: string): Promise<LoginResponse> {
-    const response = await apiClient.post<LoginResponse>('/auth/login', {
+    const response = await apiClient.post('/auth/login', {
       email,
       password,
     });
-    return response.data;
+    return response.data.data;
   },
 
   async logout(): Promise<void> {
@@ -16,9 +16,9 @@ export const authApi = {
     await apiClient.post('/auth/logout', { refresh_token: refreshToken });
   },
 
-  async getMe(): Promise<{ user: User; tenant: Tenant }> {
+  async getMe(): Promise<{ user: User & { tenant?: Tenant }; tenant?: Tenant }> {
     const response = await apiClient.get('/auth/me');
-    return response.data;
+    return response.data.data;
   },
 
   async requestMagicLink(email: string): Promise<void> {
@@ -27,9 +27,9 @@ export const authApi = {
   },
 
   async verifyMagicLink(token: string): Promise<LoginResponse> {
-    const response = await apiClient.get<LoginResponse>('/auth/magic-link/validate', {
+    const response = await apiClient.get('/auth/magic-link/validate', {
       params: { token },
     });
-    return response.data;
+    return response.data.data;
   },
 };

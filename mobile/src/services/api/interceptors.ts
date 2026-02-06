@@ -76,7 +76,7 @@ export function setupInterceptors(client: AxiosInstance) {
             refresh_token: refreshToken,
           });
 
-          const { access_token, refresh_token: newRefreshToken } = response.data as {
+          const { access_token, refresh_token: newRefreshToken } = response.data.data as {
             access_token: string;
             refresh_token: string;
           };

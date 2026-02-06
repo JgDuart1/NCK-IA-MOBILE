@@ -1,0 +1,40 @@
+NCK IA e a solucao completa para gestao de projetos e tarefas da sua equipe.
+
+PRINCIPAIS RECURSOS:
+
+GESTAO DE PROJETOS
+- Crie e organize projetos
+- Acompanhe o progresso
+- Gerencie membros da equipe
+
+TAREFAS E KANBAN
+- Visualizacao em Kanban
+- Arraste e solte tarefas
+- Defina prioridades e responsaveis
+
+SPRINTS
+- Planejamento de sprints
+- Acompanhamento de progresso
+- Gestao agil simplificada
+
+NOTAS
+- Crie e organize notas
+- Anexe arquivos
+- Historico de versoes
+
+CALENDARIO
+- Eventos e reunioes
+- Lembretes
+- Integracao com projetos
+
+NOTIFICACOES
+- Alertas em tempo real
+- Push notifications
+- Mantenha-se atualizado
+
+BUSINESS CANVAS
+- Crie modelos de negocio
+- Valide hipoteses
+- Experimentos
+
+Desenvolvido para times que valorizam produtividade e organizacao.

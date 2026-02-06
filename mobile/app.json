@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mobile",
-    "slug": "mobile",
+    "name": "NCK IA",
+    "slug": "nck-ia-mobile",
     "scheme": "nckia",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -13,6 +13,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#0F172A"
     },
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -21,6 +22,15 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#0F172A"
       },
+      "package": "com.nckia.mobile",
+      "versionCode": 1,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE"
+      ],
       "intentFilters": [
         {
           "action": "VIEW",
@@ -30,6 +40,14 @@
               "scheme": "https",
               "host": "*.nckia.com.br",
               "pathPrefix": "/auth/magic-link"
+            },
+            {
+              "scheme": "https",
+              "host": "*.nckia.com.br",
+              "pathPrefix": "/app"
+            },
+            {
+              "scheme": "nckia"
             }
           ],
           "category": ["BROWSABLE", "DEFAULT"]
@@ -47,9 +65,29 @@
         "expo-notifications",
         {
           "icon": "./assets/notification-icon.png",
-          "color": "#6366F1"
+          "color": "#6366F1",
+          "sounds": []
         }
-      ]
-    ]
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Permitir acesso às fotos para anexar arquivos."
+        }
+      ],
+      [
+        "expo-document-picker",
+        {
+          "iCloudContainerEnvironment": "Production"
+        }
+      ],
+      "expo-file-system"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "YOUR_PROJECT_ID"
+      }
+    },
+    "owner": "nckia"
   }
 }

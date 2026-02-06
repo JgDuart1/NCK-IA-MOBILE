@@ -43,3 +43,6 @@ google-services.json
 # generated native folders
 /ios
 /android
+
+# React Native debug artifacts (Metro bundler)
+com.facebook.react.devsupport.*

@@ -24,7 +24,7 @@ interface ProjectFilters {
 export const projectsApi = {
   async list(filters: ProjectFilters = {}): Promise<PaginatedResponse<Project>> {
     const response = await apiClient.get('/projects', { params: filters });
-    return response.data;
+    return { data: response.data.data, meta: response.data.meta };
   },
 
   async getById(id: string): Promise<Project> {

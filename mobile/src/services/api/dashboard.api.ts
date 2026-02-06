@@ -11,7 +11,7 @@ interface DashboardMetrics {
 export const dashboardApi = {
   async getMetrics(): Promise<DashboardMetrics> {
     const response = await apiClient.get('/dashboard/metrics');
-    return response.data;
+    return response.data.data;
   },
 
   async getRecentProjects(): Promise<Project[]> {

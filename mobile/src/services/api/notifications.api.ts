@@ -8,8 +8,8 @@ export const notificationsApi = {
   },
 
   async getUnreadCount(): Promise<number> {
-    const response = await apiClient.get('/notifications/unread-count');
-    return response.data.count;
+    const response = await apiClient.get('/notifications/unread/count');
+    return response.data.data.count;
   },
 
   async markAsRead(id: string): Promise<void> {
@@ -17,7 +17,7 @@ export const notificationsApi = {
   },
 
   async markAllAsRead(): Promise<void> {
-    await apiClient.post('/notifications/read-all');
+    await apiClient.patch('/notifications/mark-all-read');
   },
 
   async registerDevice(token: string, platform: 'ios' | 'android'): Promise<void> {

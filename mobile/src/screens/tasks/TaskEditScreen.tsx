@@ -14,8 +14,6 @@ import { darkTheme } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
 import { LocalAttachment } from '@/components/tasks/AttachmentGrid';
 
-
-
 type Props = ProjectsScreenProps<'TaskEdit'>;
 
 export function TaskEditScreen({ route, navigation }: Props) {
@@ -35,7 +33,7 @@ export function TaskEditScreen({ route, navigation }: Props) {
       sprint_id?: string;
       deadline?: string;
     },
-    localAttachments: LocalAttachment[]
+    localAttachments: LocalAttachment[],
   ) => {
     try {
       const updated = await mutateAsync({
@@ -53,8 +51,8 @@ export function TaskEditScreen({ route, navigation }: Props) {
       if (localAttachments.length > 0) {
         const results = await Promise.all(
           localAttachments.map((attachment) =>
-            attachmentService.upload(attachment.uri, 'task', updated.id)
-          )
+            attachmentService.upload(attachment.uri, 'task', updated.id),
+          ),
         );
         const failed = results.filter((result) => !result.success);
         if (failed.length > 0) {
@@ -134,7 +132,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

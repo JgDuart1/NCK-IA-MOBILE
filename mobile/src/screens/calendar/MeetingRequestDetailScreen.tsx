@@ -73,10 +73,7 @@ export function MeetingRequestDetailScreen({ route, navigation }: Props) {
       <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.header}>
           <Text style={styles.title}>{request.title}</Text>
-          <Badge
-            label={request.status}
-            variant={STATUS_VARIANTS[request.status] ?? 'default'}
-          />
+          <Badge label={request.status} variant={STATUS_VARIANTS[request.status] ?? 'default'} />
         </View>
 
         {request.description ? <Text style={styles.description}>{request.description}</Text> : null}
@@ -119,11 +116,7 @@ export function MeetingRequestDetailScreen({ route, navigation }: Props) {
         </View>
 
         <View style={styles.actions}>
-          <Button
-            variant="outline"
-            onPress={handleDecline}
-            loading={declineMutation.isPending}
-          >
+          <Button variant="outline" onPress={handleDecline} loading={declineMutation.isPending}>
             Recusar
           </Button>
           <Button onPress={handleAccept} loading={acceptMutation.isPending}>

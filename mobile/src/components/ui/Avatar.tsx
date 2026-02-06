@@ -24,13 +24,7 @@ export function Avatar({ uri, name, size = 40, style }: AvatarProps) {
   const initials = getInitials(name);
 
   return (
-    <View
-      style={[
-        styles.container,
-        { width: size, height: size, borderRadius: size / 2 },
-        style,
-      ]}
-    >
+    <View style={[styles.container, { width: size, height: size, borderRadius: size / 2 }, style]}>
       {uri ? (
         <Image source={{ uri }} style={{ width: size, height: size, borderRadius: size / 2 }} />
       ) : (

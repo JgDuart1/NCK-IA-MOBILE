@@ -25,10 +25,7 @@ export function TasksListScreen({ route, navigation }: Props) {
   const { data: project } = useProject(projectId);
   const { data: members = [] } = useProjectMembers(projectId);
   const { data: sprints = [] } = useSprints(projectId);
-  const { grouped, isLoading, error, refetch, isRefetching } = useTasksByStatus(
-    projectId,
-    filters
-  );
+  const { grouped, isLoading, error, refetch, isRefetching } = useTasksByStatus(projectId, filters);
   const updateStatus = useUpdateTaskStatus();
 
   const handleTaskDrop = async (taskId: string, newStatus: KanbanStatus) => {
@@ -80,17 +77,12 @@ export function TasksListScreen({ route, navigation }: Props) {
 
       <KanbanBoard
         tasks={grouped}
-        onTaskPress={(task) =>
-          navigation.navigate('TaskDetail', { projectId, taskId: task.id })
-        }
+        onTaskPress={(task) => navigation.navigate('TaskDetail', { projectId, taskId: task.id })}
         onTaskDrop={handleTaskDrop}
         isLoading={isRefetching}
       />
 
-      <Pressable
-        style={styles.fab}
-        onPress={() => navigation.navigate('TaskNew', { projectId })}
-      >
+      <Pressable style={styles.fab} onPress={() => navigation.navigate('TaskNew', { projectId })}>
         <Ionicons name="add" size={24} color="#fff" />
       </Pressable>
 
@@ -143,7 +135,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

@@ -48,9 +48,7 @@ export function KanbanColumn({
           />
         )}
         contentContainerStyle={styles.list}
-        ListEmptyComponent={
-          isLoading ? null : <Text style={styles.empty}>Sem tarefas</Text>
-        }
+        ListEmptyComponent={isLoading ? null : <Text style={styles.empty}>Sem tarefas</Text>}
         showsVerticalScrollIndicator={false}
       />
     </View>

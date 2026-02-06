@@ -18,12 +18,7 @@ import {
   AssumptionsScreen,
   ExperimentsScreen,
 } from '@/screens/canvas';
-import {
-  TasksListScreen,
-  TaskDetailScreen,
-  TaskNewScreen,
-  TaskEditScreen,
-} from '@/screens/tasks';
+import { TasksListScreen, TaskDetailScreen, TaskNewScreen, TaskEditScreen } from '@/screens/tasks';
 import { SprintsListScreen, SprintDetailScreen, SprintNewScreen } from '@/screens/sprints';
 import {
   NotesListScreen,
@@ -76,21 +71,9 @@ export function ProjectsStack() {
         options={{ title: 'Membros' }}
       />
 
-      <Stack.Screen
-        name="TasksList"
-        component={TasksListScreen}
-        options={{ title: 'Tarefas' }}
-      />
-      <Stack.Screen
-        name="TaskDetail"
-        component={TaskDetailScreen}
-        options={{ title: 'Tarefa' }}
-      />
-      <Stack.Screen
-        name="TaskNew"
-        component={TaskNewScreen}
-        options={{ title: 'Nova Tarefa' }}
-      />
+      <Stack.Screen name="TasksList" component={TasksListScreen} options={{ title: 'Tarefas' }} />
+      <Stack.Screen name="TaskDetail" component={TaskDetailScreen} options={{ title: 'Tarefa' }} />
+      <Stack.Screen name="TaskNew" component={TaskNewScreen} options={{ title: 'Nova Tarefa' }} />
       <Stack.Screen
         name="TaskEdit"
         component={TaskEditScreen}
@@ -113,11 +96,7 @@ export function ProjectsStack() {
         options={{ title: 'Nova Sprint' }}
       />
 
-      <Stack.Screen
-        name="ProjectNotes"
-        component={NotesListScreen}
-        options={{ title: 'Notas' }}
-      />
+      <Stack.Screen name="ProjectNotes" component={NotesListScreen} options={{ title: 'Notas' }} />
       <Stack.Screen name="NoteDetail" component={NoteDetailScreen} options={{ title: 'Nota' }} />
       <Stack.Screen name="NoteNew" component={NoteNewScreen} options={{ title: 'Nova Nota' }} />
       <Stack.Screen

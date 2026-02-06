@@ -39,8 +39,7 @@ async function checkForUpdate(): Promise<void> {
           { text: 'Depois', style: 'cancel' },
           {
             text: 'Atualizar',
-            onPress: () =>
-              Linking.openURL(`${DOWNLOAD_BASE_URL}/${latest.filename}`),
+            onPress: () => Linking.openURL(`${DOWNLOAD_BASE_URL}/${latest.filename}`),
           },
         ],
       );

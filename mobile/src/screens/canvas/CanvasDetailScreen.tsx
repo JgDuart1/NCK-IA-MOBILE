@@ -48,12 +48,7 @@ export function CanvasDetailScreen({ route, navigation }: Props) {
             onPress={() => setActiveTab(tab.key)}
             style={[styles.tabButton, activeTab === tab.key && styles.tabButtonActive]}
           >
-            <Text
-              style={[
-                styles.tabLabel,
-                activeTab === tab.key && styles.tabLabelActive,
-              ]}
-            >
+            <Text style={[styles.tabLabel, activeTab === tab.key && styles.tabLabelActive]}>
               {tab.label}
             </Text>
           </TouchableOpacity>

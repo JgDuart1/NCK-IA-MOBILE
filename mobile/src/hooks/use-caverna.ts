@@ -72,9 +72,7 @@ export function useNextReservation() {
     const now = new Date();
     const upcoming = reservations
       .filter((reservation) => new Date(reservation.date) >= now)
-      .sort(
-        (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-      );
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
     return upcoming[0] || null;
   }, [reservations]);
 }

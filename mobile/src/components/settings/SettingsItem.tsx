@@ -31,11 +31,7 @@ export function SettingsItem({
     <Container style={styles.container} onPress={onPress} disabled={toggle}>
       <View style={styles.left}>
         <View style={[styles.iconContainer, danger && styles.iconDanger]}>
-          <Ionicons
-            name={icon}
-            size={20}
-            color={danger ? colors.error : darkTheme.primary}
-          />
+          <Ionicons name={icon} size={20} color={danger ? colors.error : darkTheme.primary} />
         </View>
         <Text style={[styles.label, danger && styles.labelDanger]}>{label}</Text>
       </View>
@@ -50,11 +46,7 @@ export function SettingsItem({
       ) : (
         <View style={styles.right}>
           {value ? <Text style={styles.value}>{value}</Text> : null}
-          <Ionicons
-            name="chevron-forward"
-            size={20}
-            color={darkTheme.textSecondary}
-          />
+          <Ionicons name="chevron-forward" size={20} color={darkTheme.textSecondary} />
         </View>
       )}
     </Container>

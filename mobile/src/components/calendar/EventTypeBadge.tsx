@@ -8,7 +8,10 @@ interface EventTypeBadgeProps {
   type: Event['type'];
 }
 
-const TYPE_CONFIG: Record<Event['type'], { icon: keyof typeof Ionicons.glyphMap; color: string; label: string }> = {
+const TYPE_CONFIG: Record<
+  Event['type'],
+  { icon: keyof typeof Ionicons.glyphMap; color: string; label: string }
+> = {
   MEETING: { icon: 'videocam', color: '#3B82F6', label: 'Reuniao' },
   DEADLINE: { icon: 'flag', color: '#EF4444', label: 'Prazo' },
   MILESTONE: { icon: 'trophy', color: '#F59E0B', label: 'Marco' },

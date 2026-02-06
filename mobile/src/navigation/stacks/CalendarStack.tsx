@@ -29,9 +29,17 @@ export function CalendarStack() {
       }}
     >
       <Stack.Screen name="Calendar" component={CalendarScreen} options={{ title: 'Calendario' }} />
-      <Stack.Screen name="EventDetail" component={EventDetailScreen} options={{ title: 'Evento' }} />
+      <Stack.Screen
+        name="EventDetail"
+        component={EventDetailScreen}
+        options={{ title: 'Evento' }}
+      />
       <Stack.Screen name="EventNew" component={EventNewScreen} options={{ title: 'Novo Evento' }} />
-      <Stack.Screen name="EventEdit" component={EventEditScreen} options={{ title: 'Editar Evento' }} />
+      <Stack.Screen
+        name="EventEdit"
+        component={EventEditScreen}
+        options={{ title: 'Editar Evento' }}
+      />
       <Stack.Screen
         name="MeetingRequestDetail"
         component={MeetingRequestDetailScreen}

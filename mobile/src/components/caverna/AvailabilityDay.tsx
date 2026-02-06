@@ -24,11 +24,7 @@ export function AvailabilityDay({
 
   return (
     <TouchableOpacity
-      style={[
-        styles.container,
-        selected && styles.selected,
-        isDisabled && styles.disabled,
-      ]}
+      style={[styles.container, selected && styles.selected, isDisabled && styles.disabled]}
       disabled={isDisabled}
       onPress={onPress}
       activeOpacity={0.8}

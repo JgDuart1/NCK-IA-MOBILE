@@ -35,11 +35,9 @@ export function CavernaReservarScreen({ navigation }: Props) {
   const availableDays = useMemo(
     () =>
       availability?.filter(
-        (day) =>
-          !isPastDay(day.date) &&
-          (day.morning.available > 0 || day.afternoon.available > 0)
+        (day) => !isPastDay(day.date) && (day.morning.available > 0 || day.afternoon.available > 0),
       ) || [],
-    [availability]
+    [availability],
   );
 
   useEffect(() => {

@@ -92,10 +92,7 @@ export function PendingInvitesScreen() {
           );
         }}
         ListEmptyComponent={
-          <EmptyState
-            title="Nenhum convite"
-            description="Ainda nao ha convites pendentes."
-          />
+          <EmptyState title="Nenhum convite" description="Ainda nao ha convites pendentes." />
         }
         refreshControl={
           <RefreshControl

@@ -88,7 +88,8 @@
           "iCloudContainerEnvironment": "Production"
         }
       ],
-      "expo-file-system"
+      "expo-file-system",
+      "expo-font"
     ],
     "extra": {
       "eas": {

@@ -10,7 +10,6 @@ import { useSprints } from '@/hooks/use-sprints';
 import { darkTheme, spacing, typography } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
 
-
 type Props = ProjectsScreenProps<'SprintsList'>;
 
 export function SprintsListScreen({ route, navigation }: Props) {
@@ -50,18 +49,13 @@ export function SprintsListScreen({ route, navigation }: Props) {
           renderItem={({ item }) => (
             <SprintCard
               sprint={item}
-              onPress={() =>
-                navigation.navigate('SprintDetail', { projectId, sprintId: item.id })
-              }
+              onPress={() => navigation.navigate('SprintDetail', { projectId, sprintId: item.id })}
             />
           )}
         />
       )}
 
-      <Pressable
-        style={styles.fab}
-        onPress={() => navigation.navigate('SprintNew', { projectId })}
-      >
+      <Pressable style={styles.fab} onPress={() => navigation.navigate('SprintNew', { projectId })}>
         <Ionicons name="add" size={24} color="#fff" />
       </Pressable>
     </SafeAreaView>

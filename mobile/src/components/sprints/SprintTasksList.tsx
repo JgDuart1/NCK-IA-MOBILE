@@ -21,7 +21,12 @@ const STATUS_LABELS: Record<Task['status'], string> = {
   CANCELLED: 'Cancelada',
 };
 
-export function SprintTasksList({ tasks, onTaskPress, onRemoveTask, loading }: SprintTasksListProps) {
+export function SprintTasksList({
+  tasks,
+  onTaskPress,
+  onRemoveTask,
+  loading,
+}: SprintTasksListProps) {
   if (!tasks.length) {
     return (
       <View style={styles.empty}>

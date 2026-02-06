@@ -32,7 +32,11 @@ export function AboutScreen() {
 
       <View style={styles.links}>
         <LinkItem icon="globe-outline" label="Site oficial" onPress={() => openUrl(SITE_URL)} />
-        <LinkItem icon="document-text-outline" label="Termos de uso" onPress={() => openUrl(TERMS_URL)} />
+        <LinkItem
+          icon="document-text-outline"
+          label="Termos de uso"
+          onPress={() => openUrl(TERMS_URL)}
+        />
         <LinkItem
           icon="shield-checkmark-outline"
           label="Política de privacidade"

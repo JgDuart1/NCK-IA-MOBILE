@@ -66,7 +66,7 @@ export function usePushNotifications() {
           break;
       }
     },
-    [navigation]
+    [navigation],
   );
 
   useEffect(() => {
@@ -104,5 +104,4 @@ export function usePushNotifications() {
     if (!isAuthenticated) return;
     Notifications.setBadgeCountAsync(unreadCount).catch(() => {});
   }, [isAuthenticated, unreadCount]);
-
 }

@@ -12,13 +12,7 @@ interface AttachmentItemProps {
   onDelete?: () => void;
 }
 
-export function AttachmentItem({
-  label,
-  uri,
-  isImage,
-  editable,
-  onDelete,
-}: AttachmentItemProps) {
+export function AttachmentItem({ label, uri, isImage, editable, onDelete }: AttachmentItemProps) {
   return (
     <View style={styles.container}>
       <View style={styles.preview}>

@@ -31,7 +31,7 @@ const passwordSchema = z
           (!PASSWORD_RULES.requireLowercase || /[a-z]/.test(value)) &&
           (!PASSWORD_RULES.requireNumber || /\d/.test(value)) &&
           (!PASSWORD_RULES.requireSpecial || /[^a-zA-Z0-9]/.test(value)),
-        'Senha nao atende aos requisitos'
+        'Senha nao atende aos requisitos',
       ),
     confirm_password: z.string().min(1, 'Confirme a nova senha'),
   })
@@ -95,7 +95,7 @@ export function ChangePasswordScreen() {
           render={({ field: { onChange, value } }) => (
             <Input
               label="Senha atual"
-              placeholder="••••••••"
+              placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               secureTextEntry
               value={value}
               onChangeText={onChange}
@@ -111,7 +111,7 @@ export function ChangePasswordScreen() {
           render={({ field: { onChange, value } }) => (
             <Input
               label="Nova senha"
-              placeholder="••••••••"
+              placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               secureTextEntry
               value={value}
               onChangeText={onChange}
@@ -128,7 +128,7 @@ export function ChangePasswordScreen() {
           render={({ field: { onChange, value } }) => (
             <Input
               label="Confirmar nova senha"
-              placeholder="••••••••"
+              placeholder="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
               secureTextEntry
               value={value}
               onChangeText={onChange}

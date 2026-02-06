@@ -15,7 +15,11 @@ export function AssigneeSelector({ members, value, onChange }: AssigneeSelectorP
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Responsavel</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.list}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.list}
+      >
         <TouchableOpacity
           style={[styles.option, !value && styles.optionActive]}
           onPress={() => onChange(undefined)}

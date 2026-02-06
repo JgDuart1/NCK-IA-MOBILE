@@ -49,7 +49,7 @@ export function NoteFoldersScreen({ navigation }: Props) {
 
   const availableParents = useMemo(
     () => folders.filter((folder) => folder.id !== editing?.id),
-    [folders, editing]
+    [folders, editing],
   );
 
   const handleSubmit = async () => {
@@ -109,7 +109,7 @@ export function NoteFoldersScreen({ navigation }: Props) {
             }
           },
         },
-      ]
+      ],
     );
   };
 
@@ -154,9 +154,7 @@ export function NoteFoldersScreen({ navigation }: Props) {
 
       <Modal visible={modalVisible} onClose={() => setModalVisible(false)}>
         <View style={styles.modalContent}>
-          <Text style={styles.modalTitle}>
-            {editing ? 'Editar pasta' : 'Nova pasta'}
-          </Text>
+          <Text style={styles.modalTitle}>{editing ? 'Editar pasta' : 'Nova pasta'}</Text>
           <Input label="Nome" value={name} onChangeText={setName} />
           <FolderSelector
             label="Pasta pai"
@@ -169,7 +167,10 @@ export function NoteFoldersScreen({ navigation }: Props) {
             <Button variant="ghost" onPress={() => setModalVisible(false)}>
               Cancelar
             </Button>
-            <Button loading={createFolder.isPending || updateFolder.isPending} onPress={handleSubmit}>
+            <Button
+              loading={createFolder.isPending || updateFolder.isPending}
+              onPress={handleSubmit}
+            >
               Salvar
             </Button>
           </View>
@@ -216,7 +217,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

@@ -24,8 +24,7 @@ type NotificationData = {
 
 export function NotificationsListScreen() {
   const navigation = useNavigation<BottomTabNavigationProp<MainTabsParamList>>();
-  const { data: notifications, isLoading, isError, refetch, isRefetching } =
-    useNotifications();
+  const { data: notifications, isLoading, isError, refetch, isRefetching } = useNotifications();
   const markAsRead = useMarkAsRead();
   const markAllAsRead = useMarkAllAsRead();
   const unreadCount = useNotificationStore((state) => state.unreadCount);

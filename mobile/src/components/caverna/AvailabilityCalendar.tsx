@@ -53,7 +53,11 @@ export function AvailabilityCalendar({
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.list}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.list}
+      >
         {availability.map((day) => (
           <AvailabilityDay
             key={day.date}

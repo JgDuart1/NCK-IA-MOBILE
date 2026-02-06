@@ -15,7 +15,7 @@ function startOfDay(date: Date) {
 
 export function groupNotificationsByDate(notifications: Notification[]): NotificationSection[] {
   const sorted = [...notifications].sort(
-    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+    (a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
   );
 
   const now = new Date();

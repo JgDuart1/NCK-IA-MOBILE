@@ -17,17 +17,12 @@ export function NoteCard({ note, onPress }: NoteCardProps) {
 
   return (
     <TouchableOpacity
-      style={[
-        styles.container,
-        note.accent_color ? { borderLeftColor: note.accent_color } : null,
-      ]}
+      style={[styles.container, note.accent_color ? { borderLeftColor: note.accent_color } : null]}
       onPress={onPress}
     >
       <View style={styles.header}>
         <View style={styles.titleRow}>
-          {note.is_pinned ? (
-            <Ionicons name="pin" size={14} color={darkTheme.primary} />
-          ) : null}
+          {note.is_pinned ? <Ionicons name="pin" size={14} color={darkTheme.primary} /> : null}
           <Text style={styles.title} numberOfLines={1}>
             {note.title}
           </Text>

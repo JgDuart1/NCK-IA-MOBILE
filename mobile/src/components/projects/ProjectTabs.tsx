@@ -29,9 +29,7 @@ export function ProjectTabs({ tabs, onTabPress }: ProjectTabsProps) {
             <Ionicons name={tab.icon} size={20} color={darkTheme.text} />
           </View>
           <Text style={styles.label}>{tab.label}</Text>
-          {typeof tab.count === 'number' ? (
-            <Text style={styles.count}>{tab.count}</Text>
-          ) : null}
+          {typeof tab.count === 'number' ? <Text style={styles.count}>{tab.count}</Text> : null}
         </TouchableOpacity>
       ))}
     </View>

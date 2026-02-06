@@ -23,7 +23,7 @@ export function useTask(id: string) {
 
 export function useTasksByStatus(
   projectId: string,
-  filters: Omit<TasksFilters, 'project_id'> = {}
+  filters: Omit<TasksFilters, 'project_id'> = {},
 ) {
   const query = useTasks(projectId, filters);
 

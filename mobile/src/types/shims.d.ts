@@ -15,7 +15,7 @@ declare module 'react-hook-form' {
   export type FieldValues = Record<string, any>;
 
   export type Resolver<TFieldValues extends FieldValues = FieldValues> = (
-    values: TFieldValues
+    values: TFieldValues,
   ) => Promise<{ values: TFieldValues | {}; errors: Record<string, any> }>;
 
   export interface UseFormStateReturn<TFieldValues extends FieldValues = FieldValues> {
@@ -32,7 +32,7 @@ declare module 'react-hook-form' {
   }
 
   export function useForm<TFieldValues extends FieldValues = FieldValues>(
-    options?: Record<string, any>
+    options?: Record<string, any>,
   ): UseFormReturn<TFieldValues>;
 
   export interface ControllerProps<TFieldValues extends FieldValues = FieldValues> {
@@ -44,6 +44,6 @@ declare module 'react-hook-form' {
   }
 
   export function Controller<TFieldValues extends FieldValues = FieldValues>(
-    props: ControllerProps<TFieldValues>
+    props: ControllerProps<TFieldValues>,
   ): JSX.Element;
 }

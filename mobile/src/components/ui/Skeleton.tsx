@@ -9,12 +9,7 @@ interface SkeletonProps {
   style?: ViewStyle;
 }
 
-export function Skeleton({
-  width = '100%',
-  height = 16,
-  borderRadius = 8,
-  style,
-}: SkeletonProps) {
+export function Skeleton({ width = '100%', height = 16, borderRadius = 8, style }: SkeletonProps) {
   const opacity = useRef(new Animated.Value(0.4)).current;
 
   useEffect(() => {
@@ -22,7 +17,7 @@ export function Skeleton({
       Animated.sequence([
         Animated.timing(opacity, { toValue: 1, duration: 800, useNativeDriver: true }),
         Animated.timing(opacity, { toValue: 0.4, duration: 800, useNativeDriver: true }),
-      ])
+      ]),
     );
     animation.start();
 

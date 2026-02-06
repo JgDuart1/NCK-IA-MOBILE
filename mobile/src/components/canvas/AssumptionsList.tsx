@@ -29,11 +29,7 @@ export function AssumptionsList({ canvasId, assumptions }: AssumptionsListProps)
   return (
     <ScrollView contentContainerStyle={styles.container} keyboardShouldPersistTaps="handled">
       <View style={styles.form}>
-        <Input
-          placeholder="Adicionar assumption"
-          value={text}
-          onChangeText={setText}
-        />
+        <Input placeholder="Adicionar assumption" value={text} onChangeText={setText} />
         <Button onPress={handleAdd} disabled={!canAdd}>
           Adicionar
         </Button>

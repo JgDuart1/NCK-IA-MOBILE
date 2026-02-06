@@ -51,7 +51,7 @@ export function SettingsScreen({ navigation }: SettingsScreenProps) {
             }
           },
         },
-      ]
+      ],
     );
   };
 

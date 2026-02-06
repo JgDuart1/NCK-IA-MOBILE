@@ -9,7 +9,11 @@ export const noteFoldersApi = {
     return response.data.data;
   },
 
-  async create(data: { name: string; parent_id?: string; accent_color?: string }): Promise<NoteFolder> {
+  async create(data: {
+    name: string;
+    parent_id?: string;
+    accent_color?: string;
+  }): Promise<NoteFolder> {
     const response = await apiClient.post('/note-folders', data);
     return response.data.data;
   },

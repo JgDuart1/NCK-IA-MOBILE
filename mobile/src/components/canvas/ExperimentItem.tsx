@@ -30,8 +30,7 @@ export function ExperimentItem({ experiment, onEdit, onDelete }: ExperimentItemP
         <Text style={styles.title} numberOfLines={1}>
           {experiment.hypothesis}
         </Text>
-        <View style={[styles.badge, { backgroundColor: STATUS_COLOR[experiment.status] }]}
-        >
+        <View style={[styles.badge, { backgroundColor: STATUS_COLOR[experiment.status] }]}>
           <Text style={styles.badgeText}>{STATUS_LABEL[experiment.status]}</Text>
         </View>
       </View>

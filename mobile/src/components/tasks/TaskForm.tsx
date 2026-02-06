@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 import Toast from 'react-native-toast-message';
@@ -187,10 +180,10 @@ export function TaskForm({
                 {priority === 'LOW'
                   ? 'Baixa'
                   : priority === 'MEDIUM'
-                  ? 'Media'
-                  : priority === 'HIGH'
-                  ? 'Alta'
-                  : 'Urgente'}
+                    ? 'Media'
+                    : priority === 'HIGH'
+                      ? 'Alta'
+                      : 'Urgente'}
               </Button>
             ))}
           </View>
@@ -215,12 +208,7 @@ export function TaskForm({
           control={control}
           name="deadline"
           render={({ field: { onChange, value } }) => (
-            <Input
-              label="Prazo"
-              placeholder="YYYY-MM-DD"
-              value={value}
-              onChangeText={onChange}
-            />
+            <Input label="Prazo" placeholder="YYYY-MM-DD" value={value} onChangeText={onChange} />
           )}
         />
 
@@ -245,7 +233,10 @@ export function TaskForm({
           <Button variant="ghost" onPress={onCancel}>
             Cancelar
           </Button>
-          <Button loading={loading} onPress={handleSubmit((data) => onSubmit(data, localAttachments))}>
+          <Button
+            loading={loading}
+            onPress={handleSubmit((data) => onSubmit(data, localAttachments))}
+          >
             {submitLabel}
           </Button>
         </View>

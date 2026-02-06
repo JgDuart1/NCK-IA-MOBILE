@@ -17,8 +17,7 @@ export function InviteStatusBadge({ status }: InviteStatusBadgeProps) {
   const config = STATUS_CONFIG[status];
 
   return (
-    <View style={[styles.badge, { backgroundColor: config.color }]}
-    >
+    <View style={[styles.badge, { backgroundColor: config.color }]}>
       <Text style={styles.text}>{config.label}</Text>
     </View>
   );

@@ -25,6 +25,6 @@ export function useDebounce<T extends (...args: any[]) => void>(callback: T, del
         latestCallback.current(...args);
       }, delay);
     },
-    [delay]
+    [delay],
   );
 }

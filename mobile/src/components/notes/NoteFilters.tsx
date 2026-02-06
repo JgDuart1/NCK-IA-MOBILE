@@ -35,11 +35,7 @@ export function NoteFilters({
       />
       <FolderSelector folders={folders} value={folderId} onChange={onFolderChange} />
       <View style={styles.actions}>
-        <Button
-          size="sm"
-          variant={pinnedOnly ? 'primary' : 'outline'}
-          onPress={onPinnedToggle}
-        >
+        <Button size="sm" variant={pinnedOnly ? 'primary' : 'outline'} onPress={onPinnedToggle}>
           {pinnedOnly ? 'Fixadas' : 'Todas'}
         </Button>
       </View>

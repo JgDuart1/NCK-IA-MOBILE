@@ -15,7 +15,9 @@ export function SprintProgress({ done, total }: SprintProgressProps) {
       <View style={styles.track}>
         <View style={[styles.fill, { width: `${percent * 100}%` }]} />
       </View>
-      <Text style={styles.label}>{done}/{total} concluidas</Text>
+      <Text style={styles.label}>
+        {done}/{total} concluidas
+      </Text>
     </View>
   );
 }

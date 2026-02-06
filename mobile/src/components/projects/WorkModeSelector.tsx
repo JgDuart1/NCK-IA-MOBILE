@@ -26,9 +26,7 @@ export function WorkModeSelector({ value, onChange }: WorkModeSelectorProps) {
             style={[styles.option, isActive ? styles.optionActive : null]}
             onPress={() => onChange(option.value)}
           >
-            <Text style={[styles.label, isActive ? styles.labelActive : null]}>
-              {option.label}
-            </Text>
+            <Text style={[styles.label, isActive ? styles.labelActive : null]}>{option.label}</Text>
           </TouchableOpacity>
         );
       })}

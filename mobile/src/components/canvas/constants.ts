@@ -12,7 +12,10 @@ export const EMPTY_BLOCKS: CanvasBlocks = {
   revenue_streams: [],
 };
 
-export const BLOCK_CONFIG: Record<keyof CanvasBlocks, { label: string; color: string; description: string }> = {
+export const BLOCK_CONFIG: Record<
+  keyof CanvasBlocks,
+  { label: string; color: string; description: string }
+> = {
   key_partners: {
     label: 'Parceiros Chave',
     color: '#6366F1',

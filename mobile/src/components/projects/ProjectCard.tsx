@@ -37,9 +37,7 @@ export function ProjectCard({ project, onPress }: ProjectCardProps) {
 
   return (
     <TouchableOpacity style={styles.container} onPress={onPress} activeOpacity={0.8}>
-      <View
-        style={[styles.colorBar, { backgroundColor: project.color || darkTheme.primary }]}
-      />
+      <View style={[styles.colorBar, { backgroundColor: project.color || darkTheme.primary }]} />
       <View style={styles.content}>
         <View style={styles.header}>
           <Text style={styles.name} numberOfLines={1}>

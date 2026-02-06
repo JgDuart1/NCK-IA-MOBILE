@@ -25,19 +25,14 @@ export function CanvasNewScreen({ route, navigation }: Props) {
         onSuccess: (canvas) => {
           navigation.replace('CanvasDetail', { canvasId: canvas.id });
         },
-      }
+      },
     );
   };
 
   return (
     <SafeAreaView style={styles.container} edges={['top']}>
       <View style={styles.form}>
-        <Input
-          label="Nome"
-          placeholder="Nome do canvas"
-          value={name}
-          onChangeText={setName}
-        />
+        <Input label="Nome" placeholder="Nome do canvas" value={name} onChangeText={setName} />
         <Input
           label="Descricao"
           placeholder="Opcional"

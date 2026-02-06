@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -32,7 +25,7 @@ const sprintSchema = z
     {
       path: ['end_date'],
       message: 'Data final deve ser depois da inicial',
-    }
+    },
   );
 
 type SprintFormValues = z.infer<typeof sprintSchema>;

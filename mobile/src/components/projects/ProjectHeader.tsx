@@ -28,12 +28,7 @@ const STATUS_COLORS: Record<Project['status'], string> = {
 
 export function ProjectHeader({ project, onBack }: ProjectHeaderProps) {
   return (
-    <View
-      style={[
-        styles.container,
-        { backgroundColor: project.color || darkTheme.primary },
-      ]}
-    >
+    <View style={[styles.container, { backgroundColor: project.color || darkTheme.primary }]}>
       <View style={styles.topRow}>
         {onBack ? (
           <TouchableOpacity style={styles.backButton} onPress={onBack}>

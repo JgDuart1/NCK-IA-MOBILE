@@ -17,11 +17,7 @@ Notifications.setNotificationHandler({
 const ANDROID_CHANNEL_ID = 'default';
 
 function getExpoProjectId(): string | undefined {
-  return (
-    Constants.expoConfig?.extra?.eas?.projectId ||
-    Constants.easConfig?.projectId ||
-    undefined
-  );
+  return Constants.expoConfig?.extra?.eas?.projectId || Constants.easConfig?.projectId || undefined;
 }
 
 export const pushService = {
@@ -56,10 +52,7 @@ export const pushService = {
       ? await Notifications.getExpoPushTokenAsync({ projectId })
       : await Notifications.getExpoPushTokenAsync();
 
-    await notificationsApi.registerDevice(
-      tokenResponse.data,
-      Platform.OS as 'ios' | 'android'
-    );
+    await notificationsApi.registerDevice(tokenResponse.data, Platform.OS as 'ios' | 'android');
 
     return tokenResponse.data;
   },
@@ -68,14 +61,12 @@ export const pushService = {
     await notificationsApi.unregisterDevice(token);
   },
 
-  addNotificationReceivedListener(
-    callback: (notification: Notifications.Notification) => void
-  ) {
+  addNotificationReceivedListener(callback: (notification: Notifications.Notification) => void) {
     return Notifications.addNotificationReceivedListener(callback);
   },
 
   addNotificationResponseListener(
-    callback: (response: Notifications.NotificationResponse) => void
+    callback: (response: Notifications.NotificationResponse) => void,
   ) {
     return Notifications.addNotificationResponseReceivedListener(callback);
   },

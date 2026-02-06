@@ -43,11 +43,7 @@ interface ToolbarButtonProps {
 function ToolbarButton({ icon, label, onPress, danger }: ToolbarButtonProps) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress} disabled={!onPress}>
-      <Ionicons
-        name={icon}
-        size={18}
-        color={danger ? colors.error : darkTheme.primary}
-      />
+      <Ionicons name={icon} size={18} color={danger ? colors.error : darkTheme.primary} />
       <Text style={[styles.buttonLabel, danger && styles.dangerText]}>{label}</Text>
     </TouchableOpacity>
   );

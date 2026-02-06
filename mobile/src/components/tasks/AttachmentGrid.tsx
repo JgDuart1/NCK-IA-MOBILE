@@ -41,9 +41,7 @@ export function AttachmentGrid({
               uri={attachment.url}
               isImage={attachment.mime_type.startsWith('image/')}
               editable={editable}
-              onDelete={
-                editable && onDelete ? () => onDelete(attachment.id, false) : undefined
-              }
+              onDelete={editable && onDelete ? () => onDelete(attachment.id, false) : undefined}
             />
           ))}
 
@@ -54,9 +52,7 @@ export function AttachmentGrid({
               uri={attachment.uri}
               isImage={attachment.mimeType.startsWith('image/')}
               editable={editable}
-              onDelete={
-                editable && onDelete ? () => onDelete(attachment.id, true) : undefined
-              }
+              onDelete={editable && onDelete ? () => onDelete(attachment.id, true) : undefined}
             />
           ))}
         </View>

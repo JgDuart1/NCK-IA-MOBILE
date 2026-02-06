@@ -34,7 +34,7 @@ export const attachmentService = {
   async upload(
     uri: string,
     entityType: 'task' | 'note' | 'project',
-    entityId: string
+    entityId: string,
   ): Promise<UploadResult> {
     try {
       const fileInfo = await FileSystem.getInfoAsync(uri);

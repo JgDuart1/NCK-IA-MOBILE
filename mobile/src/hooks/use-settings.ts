@@ -28,10 +28,7 @@ export function useSettings() {
     setIsLoading(false);
   };
 
-  const updateSetting = async <K extends keyof AppSettings>(
-    key: K,
-    value: AppSettings[K]
-  ) => {
+  const updateSetting = async <K extends keyof AppSettings>(key: K, value: AppSettings[K]) => {
     const newSettings = { ...settings, [key]: value };
     setSettings(newSettings);
     await asyncStorage.set('settings', newSettings);

@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  View,
-  TextInput,
-  Text,
-  StyleSheet,
-  TextInputProps,
-  TouchableOpacity,
-} from 'react-native';
+import { View, TextInput, Text, StyleSheet, TextInputProps, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { darkTheme } from '../../theme/colors';
 import { spacing } from '../../theme/spacing';
@@ -40,9 +33,7 @@ export function Input({
       {label && <Text style={styles.label}>{label}</Text>}
 
       <View style={[styles.inputContainer, error && styles.inputError]}>
-        {leftIcon && (
-          <Ionicons name={leftIcon} size={20} color={darkTheme.textSecondary} />
-        )}
+        {leftIcon && <Ionicons name={leftIcon} size={20} color={darkTheme.textSecondary} />}
 
         <TextInput
           style={styles.input}

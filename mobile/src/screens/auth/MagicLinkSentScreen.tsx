@@ -41,7 +41,7 @@ export function MagicLinkSentScreen({ route, navigation }: any) {
 
         <Text style={styles.title}>Verifique seu email</Text>
         <Text style={styles.description}>
-          Enviamos um link mágico para{"\n"}
+          Enviamos um link mágico para{'\n'}
           <Text style={styles.email}>{email}</Text>
         </Text>
 

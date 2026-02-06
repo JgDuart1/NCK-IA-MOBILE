@@ -16,7 +16,6 @@ import { ProjectsScreenProps } from '@/navigation/types';
 import { formatDate } from '@/utils/format';
 import { Task } from '@/types';
 
-
 type Props = ProjectsScreenProps<'SprintDetail'>;
 
 export function SprintDetailScreen({ route, navigation }: Props) {
@@ -108,9 +107,7 @@ export function SprintDetailScreen({ route, navigation }: Props) {
           <View style={styles.titleRow}>
             <View style={styles.titleBlock}>
               <Text style={styles.title}>{sprint.name}</Text>
-              {project?.name ? (
-                <Text style={styles.subtitle}>{project.name}</Text>
-              ) : null}
+              {project?.name ? <Text style={styles.subtitle}>{project.name}</Text> : null}
             </View>
             <SprintStatusBadge status={sprint.status} />
           </View>
@@ -261,7 +258,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

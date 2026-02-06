@@ -22,11 +22,7 @@ export function DashboardStack() {
         animation: 'slide_from_right',
       }}
     >
-      <Stack.Screen
-        name="Dashboard"
-        component={DashboardScreen}
-        options={{ title: 'Inicio' }}
-      />
+      <Stack.Screen name="Dashboard" component={DashboardScreen} options={{ title: 'Inicio' }} />
     </Stack.Navigator>
   );
 }

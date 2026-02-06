@@ -28,9 +28,7 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
     <View style={styles.container}>
       <Card style={styles.card}>
         <Text style={styles.cardTitle}>Visao Geral</Text>
-        <Text style={styles.cardText}>
-          {project.description || 'Sem descricao adicionada.'}
-        </Text>
+        <Text style={styles.cardText}>{project.description || 'Sem descricao adicionada.'}</Text>
       </Card>
 
       <Card style={styles.card}>

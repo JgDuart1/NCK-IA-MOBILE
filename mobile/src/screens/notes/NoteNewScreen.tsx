@@ -1,12 +1,5 @@
 ﻿import React, { useState } from 'react';
-import {
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 
@@ -104,8 +97,8 @@ export function NoteNewScreen({ navigation, route }: Props) {
       if (localAttachments.length > 0) {
         const results = await Promise.all(
           localAttachments.map((attachment) =>
-            attachmentService.upload(attachment.uri, 'note', note.id)
-          )
+            attachmentService.upload(attachment.uri, 'note', note.id),
+          ),
         );
         const failed = results.filter((result) => !result.success);
         if (failed.length > 0) {
@@ -221,7 +214,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

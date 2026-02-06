@@ -1,20 +1,8 @@
 import React, { useMemo, useState } from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-  Switch,
-  Pressable,
-  Alert,
-} from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Switch, Pressable, Alert } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import {
-  AttendeeSelector,
-  DateTimePicker,
-  EventTypeBadge,
-} from '@/components/calendar';
+import { AttendeeSelector, DateTimePicker, EventTypeBadge } from '@/components/calendar';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { useCreateEvent } from '@/hooks/use-events';
@@ -119,7 +107,12 @@ export function EventNewScreen({ route, navigation }: Props) {
           onChangeText={setDescription}
           multiline
         />
-        <Input label="Local" placeholder="Local do evento" value={location} onChangeText={setLocation} />
+        <Input
+          label="Local"
+          placeholder="Local do evento"
+          value={location}
+          onChangeText={setLocation}
+        />
         <Input
           label="Link da reuniao"
           placeholder="https://"

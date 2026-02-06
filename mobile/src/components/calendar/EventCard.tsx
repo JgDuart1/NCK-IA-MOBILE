@@ -16,9 +16,7 @@ export function EventCard({ event, onPress }: EventCardProps) {
   const start = new Date(event.start_at);
   const end = new Date(event.end_at);
 
-  const timeLabel = event.is_all_day
-    ? 'Dia inteiro'
-    : `${formatTime(start)} - ${formatTime(end)}`;
+  const timeLabel = event.is_all_day ? 'Dia inteiro' : `${formatTime(start)} - ${formatTime(end)}`;
 
   return (
     <Pressable onPress={() => onPress?.(event.id)}>

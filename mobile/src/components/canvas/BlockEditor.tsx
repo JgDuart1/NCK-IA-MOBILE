@@ -93,12 +93,7 @@ export function BlockEditor({ title, description, items, onItemsChange }: BlockE
 
       <Modal visible={isOpen} onClose={handleClose}>
         <Text style={styles.modalTitle}>{isEditing ? 'Editar item' : 'Novo item'}</Text>
-        <Input
-          placeholder="Descreva o item"
-          value={text}
-          onChangeText={setText}
-          multiline
-        />
+        <Input placeholder="Descreva o item" value={text} onChangeText={setText} multiline />
         <View style={styles.modalActions}>
           <Button variant="ghost" onPress={handleClose}>
             Cancelar

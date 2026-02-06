@@ -51,11 +51,7 @@ export const projectsApi = {
     return response.data.data;
   },
 
-  async addMember(
-    projectId: string,
-    userId: string,
-    role: string
-  ): Promise<ProjectMember> {
+  async addMember(projectId: string, userId: string, role: string): Promise<ProjectMember> {
     const response = await apiClient.post(`/projects/${projectId}/members`, {
       user_id: userId,
       role,
@@ -70,7 +66,7 @@ export const projectsApi = {
   async updateMemberRole(
     projectId: string,
     memberId: string,
-    role: string
+    role: string,
   ): Promise<ProjectMember> {
     const response = await apiClient.patch(`/projects/${projectId}/members/${memberId}`, {
       role,

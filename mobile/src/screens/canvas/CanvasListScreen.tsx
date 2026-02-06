@@ -33,7 +33,7 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
   const setSelectedProject = useProjectStore((s) => s.setSelectedProject);
 
   const [activeProjectId, setActiveProjectId] = useState<string | undefined>(
-    route.params?.projectId ?? selectedProject?.id
+    route.params?.projectId ?? selectedProject?.id,
   );
 
   useEffect(() => {
@@ -46,9 +46,7 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
     }
   }, [route.params?.projectId, selectedProject?.id, activeProjectId]);
 
-  const { data, isLoading, error, refetch, isFetching } = useCanvasList(
-    activeProjectId ?? ''
-  );
+  const { data, isLoading, error, refetch, isFetching } = useCanvasList(activeProjectId ?? '');
   const projectsQuery = useProjects();
 
   const handleNavigateToProjects = () => {
@@ -60,7 +58,10 @@ export function CanvasListScreen({ navigation, route }: CanvasListProps) {
     const parent = navigation.getParent<BottomTabNavigationProp<MainTabsParamList>>();
     if (!activeProjectId) return;
     if (parent) {
-      parent.navigate('ProjectsTab', { screen: 'CanvasNew', params: { projectId: activeProjectId } });
+      parent.navigate('ProjectsTab', {
+        screen: 'CanvasNew',
+        params: { projectId: activeProjectId },
+      });
       return;
     }
     navigation.navigate('CanvasNew', { projectId: activeProjectId });

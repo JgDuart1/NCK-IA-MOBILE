@@ -32,10 +32,7 @@ export function TimelineItem({ entry, onPress }: TimelineItemProps) {
       <Avatar uri={entry.user.avatar_url} size={40} />
       <View style={styles.content}>
         <Text style={styles.text}>
-          <Text style={styles.userName}>{entry.user.name}</Text>
-          {' '}
-          {config.text}
-          {' '}
+          <Text style={styles.userName}>{entry.user.name}</Text> {config.text}{' '}
           <Text style={styles.entityType}>{entry.entity_type}</Text>
         </Text>
         <Text style={styles.time}>{formatRelativeTime(entry.created_at)}</Text>

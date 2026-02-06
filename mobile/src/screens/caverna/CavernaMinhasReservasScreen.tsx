@@ -19,10 +19,10 @@ export function CavernaMinhasReservasScreen({ navigation }: Props) {
 
   const today = toISODate(new Date());
   const upcoming = (data || []).filter(
-    (reservation) => reservation.status === 'CONFIRMED' && reservation.date >= today
+    (reservation) => reservation.status === 'CONFIRMED' && reservation.date >= today,
   );
   const history = (data || []).filter(
-    (reservation) => reservation.status !== 'CONFIRMED' || reservation.date < today
+    (reservation) => reservation.status !== 'CONFIRMED' || reservation.date < today,
   );
 
   const handleCancel = (reservation: DragonReservation) => {

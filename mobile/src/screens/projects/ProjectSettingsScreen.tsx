@@ -95,8 +95,7 @@ export function ProjectSettingsScreen({ route, navigation }: Props) {
       });
       navigation.goBack();
     } catch (err: unknown) {
-      const message =
-        getApiErrorMessage(err) || 'Nao foi possivel salvar as alteracoes';
+      const message = getApiErrorMessage(err) || 'Nao foi possivel salvar as alteracoes';
       Toast.show({
         type: 'error',
         text1: 'Erro ao salvar',
@@ -120,8 +119,7 @@ export function ProjectSettingsScreen({ route, navigation }: Props) {
             });
             navigation.goBack();
           } catch (err: unknown) {
-            const message =
-              getApiErrorMessage(err) || 'Nao foi possivel arquivar o projeto';
+            const message = getApiErrorMessage(err) || 'Nao foi possivel arquivar o projeto';
             Toast.show({
               type: 'error',
               text1: 'Erro ao arquivar',
@@ -148,8 +146,7 @@ export function ProjectSettingsScreen({ route, navigation }: Props) {
             });
             navigation.popToTop();
           } catch (err: unknown) {
-            const message =
-              getApiErrorMessage(err) || 'Nao foi possivel excluir o projeto';
+            const message = getApiErrorMessage(err) || 'Nao foi possivel excluir o projeto';
             Toast.show({
               type: 'error',
               text1: 'Erro ao excluir',
@@ -280,7 +277,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

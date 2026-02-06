@@ -46,11 +46,7 @@ export function MoreStack() {
     >
       <Stack.Screen name="MoreMenu" component={PlaceholderScreen} options={{ title: 'Mais' }} />
 
-      <Stack.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{ title: 'Meu Perfil' }}
-      />
+      <Stack.Screen name="Profile" component={ProfileScreen} options={{ title: 'Meu Perfil' }} />
       <Stack.Screen
         name="EditProfile"
         component={EditProfileScreen}

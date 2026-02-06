@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Alert,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { Alert, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 import { Ionicons } from '@expo/vector-icons';
@@ -21,7 +14,6 @@ import { attachmentService } from '@/services/attachments';
 import { darkTheme, spacing, typography } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
 import { KANBAN_COLUMNS } from '@/components/tasks/constants';
-
 
 type Props = ProjectsScreenProps<'TaskDetail'>;
 
@@ -79,7 +71,7 @@ export function TaskDetailScreen({ route, navigation }: Props) {
     }
   };
 
-  const handleUpdatePriority = async (priority: typeof PRIORITY_OPTIONS[number]) => {
+  const handleUpdatePriority = async (priority: (typeof PRIORITY_OPTIONS)[number]) => {
     if (!task) return;
     try {
       await updateTask.mutateAsync({ id: task.id, data: { priority } });
@@ -172,9 +164,7 @@ export function TaskDetailScreen({ route, navigation }: Props) {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Sprint</Text>
-          <Text style={styles.sectionText}>
-            {task.sprint_id ? task.sprint_id : 'Sem sprint'}
-          </Text>
+          <Text style={styles.sectionText}>{task.sprint_id ? task.sprint_id : 'Sem sprint'}</Text>
         </View>
 
         {task.deadline ? (
@@ -186,9 +176,7 @@ export function TaskDetailScreen({ route, navigation }: Props) {
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Descricao</Text>
-          <Text style={styles.sectionText}>
-            {task.description || 'Sem descricao fornecida'}
-          </Text>
+          <Text style={styles.sectionText}>{task.description || 'Sem descricao fornecida'}</Text>
         </View>
 
         <AttachmentGrid
@@ -236,10 +224,10 @@ export function TaskDetailScreen({ route, navigation }: Props) {
               {priority === 'LOW'
                 ? 'Baixa'
                 : priority === 'MEDIUM'
-                ? 'Media'
-                : priority === 'HIGH'
-                ? 'Alta'
-                : 'Urgente'}
+                  ? 'Media'
+                  : priority === 'HIGH'
+                    ? 'Alta'
+                    : 'Urgente'}
             </Button>
           ))}
         </View>
@@ -305,7 +293,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

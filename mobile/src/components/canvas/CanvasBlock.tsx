@@ -15,11 +15,7 @@ interface CanvasBlockProps {
 export function CanvasBlock({ config, items, onPress, half }: CanvasBlockProps) {
   return (
     <TouchableOpacity
-      style={[
-        styles.container,
-        { borderTopColor: config.color },
-        half ? styles.halfHeight : null,
-      ]}
+      style={[styles.container, { borderTopColor: config.color }, half ? styles.halfHeight : null]}
       onPress={onPress}
       activeOpacity={0.8}
     >
@@ -36,9 +32,7 @@ export function CanvasBlock({ config, items, onPress, half }: CanvasBlockProps) 
         {items.slice(0, 3).map((item, index) => (
           <BlockItem key={`${item}-${index}`} text={item} color={config.color} />
         ))}
-        {items.length > 3 && (
-          <Text style={styles.more}>+{items.length - 3} mais</Text>
-        )}
+        {items.length > 3 && <Text style={styles.more}>+{items.length - 3} mais</Text>}
         {items.length === 0 && (
           <View style={styles.empty}>
             <Ionicons name="add-circle-outline" size={24} color={darkTheme.textSecondary} />

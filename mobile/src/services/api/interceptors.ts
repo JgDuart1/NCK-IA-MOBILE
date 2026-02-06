@@ -28,7 +28,7 @@ export function setupInterceptors(client: AxiosInstance) {
       }
       return config;
     },
-    (error) => Promise.reject(error)
+    (error) => Promise.reject(error),
   );
 
   client.interceptors.response.use(
@@ -91,6 +91,6 @@ export function setupInterceptors(client: AxiosInstance) {
       }
 
       return Promise.reject(error);
-    }
+    },
   );
 }

@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  KeyboardAvoidingView,
-  Platform,
-  ScrollView,
-  Text,
-} from 'react-native';
+import { View, StyleSheet, KeyboardAvoidingView, Platform, ScrollView, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Controller, useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -73,8 +66,7 @@ export function ProjectNewScreen({ navigation }: Props) {
       });
       navigation.goBack();
     } catch (err: unknown) {
-      const message =
-        getApiErrorMessage(err) || 'Nao foi possivel criar o projeto';
+      const message = getApiErrorMessage(err) || 'Nao foi possivel criar o projeto';
       Toast.show({
         type: 'error',
         text1: 'Erro ao criar projeto',
@@ -212,7 +204,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

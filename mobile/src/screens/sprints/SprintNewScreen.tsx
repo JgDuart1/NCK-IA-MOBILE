@@ -8,7 +8,6 @@ import { useCreateSprint, useSprint, useUpdateSprint } from '@/hooks/use-sprints
 import { darkTheme } from '@/theme';
 import { ProjectsScreenProps } from '@/navigation/types';
 
-
 type Props = ProjectsScreenProps<'SprintNew'>;
 
 export function SprintNewScreen({ route, navigation }: Props) {
@@ -105,7 +104,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

@@ -24,12 +24,7 @@ interface TaskFiltersModalProps {
   onApply: (filters: TaskFilters) => void;
 }
 
-const PRIORITIES: Array<'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT'> = [
-  'LOW',
-  'MEDIUM',
-  'HIGH',
-  'URGENT',
-];
+const PRIORITIES: Array<'LOW' | 'MEDIUM' | 'HIGH' | 'URGENT'> = ['LOW', 'MEDIUM', 'HIGH', 'URGENT'];
 
 export function TaskFiltersModal({
   visible,
@@ -103,10 +98,10 @@ export function TaskFiltersModal({
                 {priority === 'LOW'
                   ? 'Baixa'
                   : priority === 'MEDIUM'
-                  ? 'Media'
-                  : priority === 'HIGH'
-                  ? 'Alta'
-                  : 'Urgente'}
+                    ? 'Media'
+                    : priority === 'HIGH'
+                      ? 'Alta'
+                      : 'Urgente'}
               </Button>
             ))}
           </View>

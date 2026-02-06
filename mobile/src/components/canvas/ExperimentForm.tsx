@@ -7,7 +7,12 @@ import { darkTheme, spacing, typography } from '@/theme';
 
 interface ExperimentFormProps {
   initialValues?: Partial<CanvasExperiment>;
-  onSubmit: (values: { hypothesis: string; method: string; result?: string; status: CanvasExperiment['status'] }) => void;
+  onSubmit: (values: {
+    hypothesis: string;
+    method: string;
+    result?: string;
+    status: CanvasExperiment['status'];
+  }) => void;
   onCancel: () => void;
 }
 
@@ -22,12 +27,12 @@ export function ExperimentForm({ initialValues, onSubmit, onCancel }: Experiment
   const [method, setMethod] = useState(initialValues?.method ?? '');
   const [result, setResult] = useState(initialValues?.result ?? '');
   const [status, setStatus] = useState<CanvasExperiment['status']>(
-    initialValues?.status ?? 'pending'
+    initialValues?.status ?? 'pending',
   );
 
   const canSubmit = useMemo(
     () => hypothesis.trim().length > 0 && method.trim().length > 0,
-    [hypothesis, method]
+    [hypothesis, method],
   );
 
   return (
@@ -45,12 +50,7 @@ export function ExperimentForm({ initialValues, onSubmit, onCancel }: Experiment
         value={method}
         onChangeText={setMethod}
       />
-      <Input
-        label="Resultado"
-        placeholder="Opcional"
-        value={result}
-        onChangeText={setResult}
-      />
+      <Input label="Resultado" placeholder="Opcional" value={result} onChangeText={setResult} />
 
       <View style={styles.statusRow}>
         <Text style={styles.statusLabel}>Status</Text>

@@ -13,13 +13,7 @@ interface FolderTreeProps {
   onDelete?: (folder: NoteFolder) => void;
 }
 
-export function FolderTree({
-  folders,
-  depth = 0,
-  onSelect,
-  onEdit,
-  onDelete,
-}: FolderTreeProps) {
+export function FolderTree({ folders, depth = 0, onSelect, onEdit, onDelete }: FolderTreeProps) {
   return (
     <View style={styles.container}>
       {folders.map((folder) => (

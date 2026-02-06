@@ -14,7 +14,11 @@ export function SprintSelector({ sprints, value, onChange }: SprintSelectorProps
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Sprint</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.list}>
+      <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.list}
+      >
         <TouchableOpacity
           style={[styles.option, !value && styles.optionActive]}
           onPress={() => onChange(undefined)}

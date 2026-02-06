@@ -85,17 +85,27 @@ export type RootStackParamList = {
   Main: NavigatorScreenParams<MainTabsParamList>;
 };
 
-export type AuthScreenProps<T extends keyof AuthStackParamList> =
-  NativeStackScreenProps<AuthStackParamList, T>;
+export type AuthScreenProps<T extends keyof AuthStackParamList> = NativeStackScreenProps<
+  AuthStackParamList,
+  T
+>;
 
-export type ProjectsScreenProps<T extends keyof ProjectsStackParamList> =
-  NativeStackScreenProps<ProjectsStackParamList, T>;
+export type ProjectsScreenProps<T extends keyof ProjectsStackParamList> = NativeStackScreenProps<
+  ProjectsStackParamList,
+  T
+>;
 
-export type CalendarScreenProps<T extends keyof CalendarStackParamList> =
-  NativeStackScreenProps<CalendarStackParamList, T>;
+export type CalendarScreenProps<T extends keyof CalendarStackParamList> = NativeStackScreenProps<
+  CalendarStackParamList,
+  T
+>;
 
-export type MoreScreenProps<T extends keyof MoreStackParamList> =
-  NativeStackScreenProps<MoreStackParamList, T>;
+export type MoreScreenProps<T extends keyof MoreStackParamList> = NativeStackScreenProps<
+  MoreStackParamList,
+  T
+>;
 
-export type MainTabScreenProps<T extends keyof MainTabsParamList> =
-  BottomTabScreenProps<MainTabsParamList, T>;
+export type MainTabScreenProps<T extends keyof MainTabsParamList> = BottomTabScreenProps<
+  MainTabsParamList,
+  T
+>;

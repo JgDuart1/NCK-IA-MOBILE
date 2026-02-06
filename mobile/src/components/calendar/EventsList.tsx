@@ -15,13 +15,7 @@ interface EventsListProps {
   onEventPress: (eventId: string) => void;
 }
 
-export function EventsList({
-  events,
-  isLoading,
-  isError,
-  onRetry,
-  onEventPress,
-}: EventsListProps) {
+export function EventsList({ events, isLoading, isError, onRetry, onEventPress }: EventsListProps) {
   if (isLoading) {
     return (
       <View style={styles.stateContainer}>

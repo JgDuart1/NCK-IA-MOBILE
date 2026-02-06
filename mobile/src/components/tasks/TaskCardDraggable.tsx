@@ -24,12 +24,7 @@ type ContextType = {
   startY: number;
 };
 
-export function TaskCardDraggable({
-  task,
-  onPress,
-  onDrop,
-  columnIndex,
-}: TaskCardDraggableProps) {
+export function TaskCardDraggable({ task, onPress, onDrop, columnIndex }: TaskCardDraggableProps) {
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
   const scale = useSharedValue(1);
@@ -57,7 +52,7 @@ export function TaskCardDraggable({
         const columnOffset = Math.round(event.translationX / KANBAN_COLUMN_WIDTH);
         const newColumnIndex = Math.max(
           0,
-          Math.min(KANBAN_STATUSES.length - 1, columnIndex + columnOffset)
+          Math.min(KANBAN_STATUSES.length - 1, columnIndex + columnOffset),
         );
 
         if (newColumnIndex !== columnIndex) {
@@ -74,16 +69,7 @@ export function TaskCardDraggable({
         zIndex.value = 0;
         runOnJS(setDragEnabled)(false);
       });
-  }, [
-    columnIndex,
-    context,
-    dragEnabled,
-    onDrop,
-    scale,
-    translateX,
-    translateY,
-    zIndex,
-  ]);
+  }, [columnIndex, context, dragEnabled, onDrop, scale, translateX, translateY, zIndex]);
 
   const longPressGesture = useMemo(
     () =>
@@ -95,7 +81,7 @@ export function TaskCardDraggable({
         .onEnd(() => {
           runOnJS(setDragEnabled)(false);
         }),
-    []
+    [],
   );
 
   const animatedStyle = useAnimatedStyle(() => ({

@@ -13,7 +13,9 @@ export function AppInfo({ name, version, build }: AppInfoProps) {
   return (
     <View style={styles.container}>
       <Text style={styles.name}>{name}</Text>
-      <Text style={styles.version}>Versão {version} ({build})</Text>
+      <Text style={styles.version}>
+        Versão {version} ({build})
+      </Text>
     </View>
   );
 }

@@ -30,7 +30,7 @@ export const cacheService = {
     if (cacheDir) {
       const files = await FileSystem.readDirectoryAsync(cacheDir);
       await Promise.all(
-        files.map((file) => FileSystem.deleteAsync(`${cacheDir}${file}`, { idempotent: true }))
+        files.map((file) => FileSystem.deleteAsync(`${cacheDir}${file}`, { idempotent: true })),
       );
     }
 

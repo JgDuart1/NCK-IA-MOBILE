@@ -92,12 +92,7 @@ export function DateTimePicker({ value, onChange, mode, minimumDate, label }: Da
             />
           )}
           {(mode === 'time' || mode === 'datetime') && (
-            <Input
-              label="Hora"
-              placeholder="HH:MM"
-              value={timeInput}
-              onChangeText={setTimeInput}
-            />
+            <Input label="Hora" placeholder="HH:MM" value={timeInput} onChangeText={setTimeInput} />
           )}
           {error ? <Text style={styles.error}>{error}</Text> : null}
           <View style={styles.actions}>

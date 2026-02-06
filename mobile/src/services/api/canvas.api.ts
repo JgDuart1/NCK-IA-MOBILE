@@ -1,10 +1,5 @@
 ﻿import { apiClient } from './client';
-import {
-  BusinessModelCanvas,
-  CanvasAssumption,
-  CanvasBlocks,
-  CanvasExperiment,
-} from '@/types';
+import { BusinessModelCanvas, CanvasAssumption, CanvasBlocks, CanvasExperiment } from '@/types';
 
 interface CreateCanvasDto {
   project_id: string;
@@ -50,12 +45,11 @@ export const canvasApi = {
   async updateAssumption(
     canvasId: string,
     assumptionId: string,
-    validated: boolean
+    validated: boolean,
   ): Promise<CanvasAssumption> {
-    const response = await apiClient.patch(
-      `/canvas/${canvasId}/assumptions/${assumptionId}`,
-      { validated }
-    );
+    const response = await apiClient.patch(`/canvas/${canvasId}/assumptions/${assumptionId}`, {
+      validated,
+    });
     return response.data.data;
   },
 
@@ -65,7 +59,7 @@ export const canvasApi = {
 
   async addExperiment(
     canvasId: string,
-    data: Partial<CanvasExperiment>
+    data: Partial<CanvasExperiment>,
   ): Promise<CanvasExperiment> {
     const response = await apiClient.post(`/canvas/${canvasId}/experiments`, data);
     return response.data.data;
@@ -74,12 +68,9 @@ export const canvasApi = {
   async updateExperiment(
     canvasId: string,
     experimentId: string,
-    data: Partial<CanvasExperiment>
+    data: Partial<CanvasExperiment>,
   ): Promise<CanvasExperiment> {
-    const response = await apiClient.patch(
-      `/canvas/${canvasId}/experiments/${experimentId}`,
-      data
-    );
+    const response = await apiClient.patch(`/canvas/${canvasId}/experiments/${experimentId}`, data);
     return response.data.data;
   },
 

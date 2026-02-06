@@ -59,7 +59,12 @@ export function CalendarScreen({ route, navigation }: Props) {
   return (
     <SafeAreaView style={styles.container} edges={['bottom']}>
       <ScrollView contentContainerStyle={styles.content}>
-        <CalendarHeader year={year} month={month} onPrevious={goToPreviousMonth} onNext={goToNextMonth} />
+        <CalendarHeader
+          year={year}
+          month={month}
+          onPrevious={goToPreviousMonth}
+          onNext={goToNextMonth}
+        />
 
         {projectId ? (
           <View style={styles.filterRow}>

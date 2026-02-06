@@ -124,18 +124,9 @@ export function EditProfileScreen() {
           )}
         />
 
-        <Input
-          label="Email"
-          value={user.email}
-          editable={false}
-          leftIcon="mail-outline"
-        />
+        <Input label="Email" value={user.email} editable={false} leftIcon="mail-outline" />
 
-        <Button
-          onPress={handleSubmit(onSubmit)}
-          loading={updateProfile.isPending}
-          fullWidth
-        >
+        <Button onPress={handleSubmit(onSubmit)} loading={updateProfile.isPending} fullWidth>
           Salvar alteracoes
         </Button>
       </ScrollView>

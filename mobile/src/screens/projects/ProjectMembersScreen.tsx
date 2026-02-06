@@ -45,8 +45,7 @@ export function ProjectMembersScreen({ route }: Props) {
       setRole('MEMBER');
       setAddOpen(false);
     } catch (err: unknown) {
-      const message =
-        getApiErrorMessage(err) || 'Nao foi possivel adicionar o membro';
+      const message = getApiErrorMessage(err) || 'Nao foi possivel adicionar o membro';
       Toast.show({
         type: 'error',
         text1: 'Erro ao adicionar',
@@ -56,35 +55,30 @@ export function ProjectMembersScreen({ route }: Props) {
   };
 
   const handleRemove = (member: ProjectMember) => {
-    Alert.alert(
-      'Remover membro',
-      `Deseja remover ${member.user?.name || 'este membro'}?`,
-      [
-        { text: 'Cancelar', style: 'cancel' },
-        {
-          text: 'Remover',
-          style: 'destructive',
-          onPress: async () => {
-            try {
-              await removeMember.mutateAsync(member.id);
-              Toast.show({
-                type: 'success',
-                text1: 'Membro removido',
-                text2: 'O membro foi removido do projeto.',
-              });
-            } catch (err: unknown) {
-              const message =
-                getApiErrorMessage(err) || 'Nao foi possivel remover o membro';
-              Toast.show({
-                type: 'error',
-                text1: 'Erro ao remover',
-                text2: message,
-              });
-            }
-          },
+    Alert.alert('Remover membro', `Deseja remover ${member.user?.name || 'este membro'}?`, [
+      { text: 'Cancelar', style: 'cancel' },
+      {
+        text: 'Remover',
+        style: 'destructive',
+        onPress: async () => {
+          try {
+            await removeMember.mutateAsync(member.id);
+            Toast.show({
+              type: 'success',
+              text1: 'Membro removido',
+              text2: 'O membro foi removido do projeto.',
+            });
+          } catch (err: unknown) {
+            const message = getApiErrorMessage(err) || 'Nao foi possivel remover o membro';
+            Toast.show({
+              type: 'error',
+              text1: 'Erro ao remover',
+              text2: message,
+            });
+          }
         },
-      ]
-    );
+      },
+    ]);
   };
 
   const handleChangeRole = async (member: ProjectMember, nextRole: ProjectMember['role']) => {
@@ -171,11 +165,7 @@ export function ProjectMembersScreen({ route }: Props) {
           <Button variant="ghost" onPress={() => setAddOpen(false)}>
             Cancelar
           </Button>
-          <Button
-            onPress={handleAddMember}
-            loading={addMember.isPending}
-            disabled={!userId.trim()}
-          >
+          <Button onPress={handleAddMember} loading={addMember.isPending} disabled={!userId.trim()}>
             Adicionar
           </Button>
         </View>
@@ -183,9 +173,7 @@ export function ProjectMembersScreen({ route }: Props) {
 
       <Modal visible={!!editingMember} onClose={() => setEditingMember(null)}>
         <Text style={styles.modalTitle}>Alterar role</Text>
-        <Text style={styles.modalLabel}>
-          {editingMember?.user?.name || 'Membro'}
-        </Text>
+        <Text style={styles.modalLabel}>{editingMember?.user?.name || 'Membro'}</Text>
         <View style={styles.roleRow}>
           {ROLE_OPTIONS.map((item) => (
             <Button
@@ -254,7 +242,6 @@ function getApiErrorMessage(error: unknown) {
   if (typeof error !== 'object' || !error) {
     return null;
   }
-  const maybeResponse = (error as { response?: { data?: { message?: string } } })
-    .response;
+  const maybeResponse = (error as { response?: { data?: { message?: string } } }).response;
   return maybeResponse?.data?.message ?? null;
 }

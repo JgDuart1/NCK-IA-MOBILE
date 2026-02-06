@@ -68,9 +68,7 @@ export function ExperimentsList({ canvasId, experiments }: ExperimentsListProps)
               key={experiment.id}
               experiment={experiment}
               onEdit={() => handleEdit(experiment)}
-              onDelete={() =>
-                deleteMutation.mutate({ canvasId, experimentId: experiment.id })
-              }
+              onDelete={() => deleteMutation.mutate({ canvasId, experimentId: experiment.id })}
             />
           ))}
         </View>

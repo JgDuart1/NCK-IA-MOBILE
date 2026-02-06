@@ -40,22 +40,12 @@ export function InviteCard({
       {(onResend || onCancel) && (
         <View style={styles.actions}>
           {onResend ? (
-            <Button
-              variant="outline"
-              size="sm"
-              onPress={onResend}
-              loading={isLoadingResend}
-            >
+            <Button variant="outline" size="sm" onPress={onResend} loading={isLoadingResend}>
               Reenviar
             </Button>
           ) : null}
           {onCancel ? (
-            <Button
-              variant="danger"
-              size="sm"
-              onPress={onCancel}
-              loading={isLoadingCancel}
-            >
+            <Button variant="danger" size="sm" onPress={onCancel} loading={isLoadingCancel}>
               Cancelar
             </Button>
           ) : null}

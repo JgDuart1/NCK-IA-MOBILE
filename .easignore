@@ -1,7 +1,7 @@
-# Docs folder (has spaces in names that break tar on Linux)
-../docs/
-../README.md
-../.claude/
+# Docs folder (not needed for build)
+docs/
+README.md
+.claude/
 
 # OS files
 .DS_Store
@@ -13,8 +13,8 @@ Desktop.ini
 .idea/
 
 # Expo local
-.expo/
+mobile/.expo/
 
 # Store assets (not needed for build)
-store-assets/
-download/
+mobile/store-assets/
+mobile/download/

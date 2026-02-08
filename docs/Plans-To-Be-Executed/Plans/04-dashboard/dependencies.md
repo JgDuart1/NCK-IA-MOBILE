@@ -55,7 +55,7 @@
 | Import | Uso |
 |--------|-----|
 | Navigation types | Tipagem de navegação |
-
+  
 ---
 
 ## Planos Dependentes

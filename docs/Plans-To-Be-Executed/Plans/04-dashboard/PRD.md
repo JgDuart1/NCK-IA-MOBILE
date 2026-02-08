@@ -50,7 +50,7 @@ Implementar a tela inicial do app com resumos, métricas, atividades recentes e 
 **Critérios de Aceitação:**
 - [ ] Botão "Nova Tarefa"
 - [ ] Botão "Novo Evento"
-- [ ] Lista de projetos favoritos/recentes
+- [ ] Lista de projetos favo  ritos/recentes
 
 ---
 
